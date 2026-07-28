@@ -1,0 +1,5767 @@
+{
+  "vendors": {
+    "得正#OolongTea Top (高雄建工計劃)": {
+      "name": "得正#OolongTea Top (高雄建工計劃)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "春烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "輕烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "焙烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "春烏龍奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "輕烏龍鮮奶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "焙烏龍鮮奶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "奶蓋系列",
+          "itemName": "芝士春烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "奶蓋系列",
+          "itemName": "芝士焙烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮果烏龍",
+          "itemName": "檸檬春烏龍",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果烏龍",
+          "itemName": "香柚春烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮果烏龍",
+          "itemName": "甘蔗春烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "07-3805599",
+      "address": "高雄市三民區建工路450號",
+      "city": "高雄市"
+    },
+    "麻古茶坊 (高雄建工店)": {
+      "name": "麻古茶坊 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "高山原葉茶",
+          "itemName": "高山金萱茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "四季春茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "錫蘭紅茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "翡翠綠茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "高山烏龍",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "柳橙果粒茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            },
+            {
+              "name": "瓶裝",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "翡翠香檸",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "奇異果果粒茶",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 75
+            },
+            {
+              "name": "瓶裝",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "番茄梅蜜",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            },
+            {
+              "name": "瓶裝",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "葡萄柚果粒茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            },
+            {
+              "name": "瓶裝",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "百香雙Q果粒茶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝芒果果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝葡萄果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝草莓果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝可可",
+          "price": 85,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "金萱三Q",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "波霸奶茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "搖滾波波",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "阿薩姆奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            },
+            {
+              "name": "瓶裝",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "金萱拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "紅茶拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "翡翠拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 85
+            }
+          ]
+        }
+      ],
+      "phone": "07-3831188",
+      "address": "高雄市三民區建工路418號",
+      "city": "高雄市"
+    },
+    "八曜和茶 (高雄建工店)": {
+      "name": "八曜和茶 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "八曜極上採茶",
+          "itemName": "八曜和茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "炙燒濃焙烏龍",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "極上白和茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "穀麥茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "京翠絲綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "八曜和茶歐蕾",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "炙燒濃焙歐蕾",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "八曜308",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "柚香覺醒",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "檸檬覺醒",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "百香覺醒",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        }
+      ],
+      "phone": "07-3808822",
+      "address": "高雄市三民區建工路424號",
+      "city": "高雄市"
+    },
+    "再睡5分鐘 (高雄建工店)": {
+      "name": "再睡5分鐘 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "棉被厚奶蓋",
+          "itemName": "棉被日安紅",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "棉被厚奶蓋",
+          "itemName": "棉被午茉綠",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "棉被厚奶蓋",
+          "itemName": "棉被四季春",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "棉被厚奶蓋",
+          "itemName": "棉被鐵觀音",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "日安紅歐蕾",
+          "itemName": "日安紅濃茶歐蕾",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "日安紅歐蕾",
+          "itemName": "午茉綠歐蕾",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "日安紅歐蕾",
+          "itemName": "鐵觀音歐蕾",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "簡單喝原茶",
+          "itemName": "日安紅",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "簡單喝原茶",
+          "itemName": "午茉綠",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "簡單喝原茶",
+          "itemName": "四季新綠",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "簡單喝原茶",
+          "itemName": "熟成鐵觀音",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "果茶特調",
+          "itemName": "水蜜桃烏龍",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "果茶特調",
+          "itemName": "香檸四季春",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        }
+      ],
+      "phone": "07-3806688",
+      "address": "高雄市三民區建工路432號",
+      "city": "高雄市"
+    },
+    "五桐號 (高雄建工店)": {
+      "name": "五桐號 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "招牌桐茶",
+          "itemName": "五桐茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "招牌桐茶",
+          "itemName": "杏仁凍五桐茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "招牌桐茶",
+          "itemName": "招牌五桐奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "原茶系列",
+          "itemName": "玉堂春素觀音",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原茶系列",
+          "itemName": "老料紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原茶系列",
+          "itemName": "綠茶蜜桃",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 40
+            },
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "最濃芒果冰沙",
+          "price": 85,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "青荔凍飲",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "綠蜜桃凍飲",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "泰奶珍凍",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮乳系列",
+          "itemName": "綠茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮乳系列",
+          "itemName": "觀音拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "07-3832266",
+      "address": "高雄市三民區建工路416號",
+      "city": "高雄市"
+    },
+    "烏弄UNUNO (高雄建工店)": {
+      "name": "烏弄UNUNO (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "原生單品茶",
+          "itemName": "阿里山金萱茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            },
+            {
+              "name": "瓶裝",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "原生單品茶",
+          "itemName": "碧螺春綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            },
+            {
+              "name": "瓶裝",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "原生單品茶",
+          "itemName": "高山烏龍茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            },
+            {
+              "name": "瓶裝",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "旺萊紅玉",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "檸檬冬片",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "金桔檸檬",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "百香綠茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "經典配料特調",
+          "itemName": "杏仁凍冬片",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "經典配料特調",
+          "itemName": "桂花凍紅玉",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "經典配料特調",
+          "itemName": "雙凍烏龍",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "冬片拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "紅玉拿鐵",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "金萱拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        }
+      ],
+      "phone": "07-3830099",
+      "address": "高雄市三民區建工路326號",
+      "city": "高雄市"
+    },
+    "可不可熟成紅茶 (高雄建工店)": {
+      "name": "可不可熟成紅茶 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "熟成紅茶",
+          "itemName": "熟成紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "麗春紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "太妃紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "胭脂紅茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 40
+            },
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "熟成冷露",
+          "itemName": "冷露綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成冷露",
+          "itemName": "熟成冷露",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成冷露",
+          "itemName": "雪花冷露",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "熟成檸果",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "春梅冰茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "金蜜紅茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "金蘋紅茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "熟成歐蕾",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "白玉歐蕾",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "冷露歐蕾",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "胭脂歐蕾",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "特調特選",
+          "itemName": "雲梅白玉",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        }
+      ],
+      "phone": "07-3831133",
+      "address": "高雄市三民區建工路336號",
+      "city": "高雄市"
+    },
+    "50嵐 (高雄建工店)": {
+      "name": "50嵐 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "找好茶",
+          "itemName": "茉莉綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "阿薩姆紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "四季春青茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "凍頂烏龍茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "奶綠",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "烏龍奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "焦糖奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "波霸奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "珍珠奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "椰果奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "仙草凍奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找新鮮",
+          "itemName": "檸檬綠茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找新鮮",
+          "itemName": "梅子綠茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "找新鮮",
+          "itemName": "葡萄柚綠茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "找特調",
+          "itemName": "冰冰紅茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "找特調",
+          "itemName": "冰淇淋紅茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找特調",
+          "itemName": "旺來紅",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "拿鐵系列",
+          "itemName": "紅茶拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "拿鐵系列",
+          "itemName": "綠茶拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "拿鐵系列",
+          "itemName": "烏龍拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "phone": "07-3803366",
+      "address": "高雄市三民區建工路344號",
+      "city": "高雄市"
+    },
+    "迷客夏 (高雄建工店)": {
+      "name": "迷客夏 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "芋頭鮮奶",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 70
+            },
+            {
+              "name": "L",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "珍珠鮮奶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 65
+            },
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "手炒黑糖鮮奶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 65
+            },
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "布丁鮮奶",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 70
+            },
+            {
+              "name": "L",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "伯爵紅茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "大正紅茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "炒糖鮮奶茶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "大正紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "初露青茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "茉香綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "琥珀烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "特調果茶",
+          "itemName": "柳丁綠茶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "特調果茶",
+          "itemName": "香檸綠茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "07-3807711",
+      "address": "高雄市三民區建工路400號",
+      "city": "高雄市"
+    },
+    "龜記茗品 (高雄建工店)": {
+      "name": "龜記茗品 (高雄建工店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "嚴選原茶",
+          "itemName": "三清茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "極品紅茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "翡翠綠茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "四季春青茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "紅柚翡翠",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "秀水旺梨春",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "蘋果紅宣",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "香柚翡翠",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮乳鮮奶",
+          "itemName": "濃乳茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮乳鮮奶",
+          "itemName": "雷夢烏龍",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮乳鮮奶",
+          "itemName": "紅烏貝貝",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "古早風味",
+          "itemName": "冬瓜檸檬",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "古早風味",
+          "itemName": "普洱鮮乳",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "07-3809988",
+      "address": "高雄市三民區建工路436號",
+      "city": "高雄市"
+    },
+    "屏東肉圓 (中山店)": {
+      "name": "屏東肉圓 (中山店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "主食類",
+          "itemName": "蒸肉圓",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1粒",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "豬血湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "魚丸湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "貢丸湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "綜合湯",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 30
+            }
+          ]
+        }
+      ],
+      "phone": "08-7321051",
+      "address": "屏東縣屏東市中山路61號",
+      "city": "屏東縣"
+    },
+    "屏東任家涼麵": {
+      "name": "屏東任家涼麵",
+      "type": "便當",
+      "items": [
+        {
+          "category": "涼麵類",
+          "itemName": "四川涼麵",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 50
+            },
+            {
+              "name": "大",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "味噌湯",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "味噌貢丸湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "味噌蛋花湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "味噌綜合湯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 35
+            }
+          ]
+        }
+      ],
+      "phone": "08-7360285",
+      "address": "屏東縣屏東市自由路488號",
+      "city": "屏東縣"
+    },
+    "港式餛飩大王": {
+      "name": "港式餛飩大王",
+      "type": "便當",
+      "items": [
+        {
+          "category": "麵食類",
+          "itemName": "鮮肉餛飩麵",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 70
+            },
+            {
+              "name": "大",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "麵食類",
+          "itemName": "鮮蝦餛飩麵",
+          "price": 85,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 85
+            },
+            {
+              "name": "大",
+              "price": 100
+            }
+          ]
+        },
+        {
+          "category": "麵食類",
+          "itemName": "麻醬麵",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 50
+            },
+            {
+              "name": "大",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "麵食類",
+          "itemName": "乾麵",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 45
+            },
+            {
+              "name": "大",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鮮肉餛飩湯",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鮮蝦餛飩湯",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 70
+            }
+          ]
+        }
+      ],
+      "phone": "08-7366810",
+      "address": "屏東縣屏東市自由路492號",
+      "city": "屏東縣"
+    },
+    "正老牌屏東肉蚵仔煎": {
+      "name": "正老牌屏東肉蚵仔煎",
+      "type": "便當",
+      "items": [
+        {
+          "category": "煎類",
+          "itemName": "蚵仔煎",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "煎類",
+          "itemName": "蝦仁煎",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "煎類",
+          "itemName": "綜合煎",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "煎類",
+          "itemName": "蛋煎",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "蚵仔湯",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "蛤蜊湯",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 50
+            }
+          ]
+        }
+      ],
+      "phone": "08-7323547",
+      "address": "屏東縣屏東市民族路57號",
+      "city": "屏東縣"
+    },
+    "侯家滷味塩水鴨": {
+      "name": "侯家滷味塩水鴨",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌肉品",
+          "itemName": "塩水鴨",
+          "price": 220,
+          "sizes": [
+            {
+              "name": "半隻",
+              "price": 220
+            },
+            {
+              "name": "整隻",
+              "price": 440
+            }
+          ]
+        },
+        {
+          "category": "招牌肉品",
+          "itemName": "燻鴨",
+          "price": 230,
+          "sizes": [
+            {
+              "name": "半隻",
+              "price": 230
+            },
+            {
+              "name": "整隻",
+              "price": 460
+            }
+          ]
+        },
+        {
+          "category": "招牌肉品",
+          "itemName": "醬鴨",
+          "price": 240,
+          "sizes": [
+            {
+              "name": "半隻",
+              "price": 240
+            },
+            {
+              "name": "整隻",
+              "price": 480
+            }
+          ]
+        },
+        {
+          "category": "麵飯類",
+          "itemName": "鴨肉麵",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 70
+            },
+            {
+              "name": "大",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "麵飯類",
+          "itemName": "鴨肉飯",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 60
+            },
+            {
+              "name": "大",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鴨肉湯",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 60
+            }
+          ]
+        }
+      ],
+      "phone": "08-7324070",
+      "address": "屏東縣屏東市中正路169號",
+      "city": "屏東縣"
+    },
+    "大埔雞肉飯": {
+      "name": "大埔雞肉飯",
+      "type": "便當",
+      "items": [
+        {
+          "category": "飯類",
+          "itemName": "雞肉飯",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 45
+            },
+            {
+              "name": "大",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "飯類",
+          "itemName": "雞肉便當",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "飯類",
+          "itemName": "滷肉飯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 35
+            },
+            {
+              "name": "大",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "小菜湯品",
+          "itemName": "滷蛋",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "顆",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "小菜湯品",
+          "itemName": "油豆腐",
+          "price": 10,
+          "sizes": [
+            {
+              "name": "塊",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "category": "小菜湯品",
+          "itemName": "下水湯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 35
+            }
+          ]
+        }
+      ],
+      "phone": "08-7328110",
+      "address": "屏東縣屏東市柳州街28號",
+      "city": "屏東縣"
+    },
+    "阿秀日式牛肉麵": {
+      "name": "阿秀日式牛肉麵",
+      "type": "便當",
+      "items": [
+        {
+          "category": "牛肉麵類",
+          "itemName": "牛肉麵",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 160
+            },
+            {
+              "name": "大",
+              "price": 180
+            }
+          ]
+        },
+        {
+          "category": "牛肉麵類",
+          "itemName": "牛雜麵",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 160
+            },
+            {
+              "name": "大",
+              "price": 180
+            }
+          ]
+        },
+        {
+          "category": "牛肉麵類",
+          "itemName": "牛肉湯麵",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 80
+            },
+            {
+              "name": "大",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "乾麵類",
+          "itemName": "麻醬乾麵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 60
+            },
+            {
+              "name": "大",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "牛肉湯",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 160
+            }
+          ]
+        }
+      ],
+      "phone": "08-7666667",
+      "address": "屏東縣屏東市光復路388-1號",
+      "city": "屏東縣"
+    },
+    "王朝香揚三寶麵": {
+      "name": "王朝香揚三寶麵",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌麵食",
+          "itemName": "三寶牛肉麵",
+          "price": 180,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 180
+            },
+            {
+              "name": "大",
+              "price": 200
+            }
+          ]
+        },
+        {
+          "category": "招牌麵食",
+          "itemName": "牛肉麵",
+          "price": 140,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 140
+            },
+            {
+              "name": "大",
+              "price": 160
+            }
+          ]
+        },
+        {
+          "category": "招牌麵食",
+          "itemName": "牛筋麵",
+          "price": 170,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 170
+            },
+            {
+              "name": "大",
+              "price": 190
+            }
+          ]
+        },
+        {
+          "category": "乾麵類",
+          "itemName": "榨菜肉絲麵",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 65
+            },
+            {
+              "name": "大",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "牛肉湯",
+          "price": 140,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 140
+            }
+          ]
+        }
+      ],
+      "phone": "08-7231868",
+      "address": "屏東縣屏東市廣東路87號",
+      "city": "屏東縣"
+    },
+    "新園汕頭火鍋 (屏東總店)": {
+      "name": "新園汕頭火鍋 (屏東總店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "鍋底類",
+          "itemName": "汕頭扁魚鍋底",
+          "price": 100,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 100
+            },
+            {
+              "name": "大",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "category": "肉品類",
+          "itemName": "霜降牛肉",
+          "price": 350,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 350
+            }
+          ]
+        },
+        {
+          "category": "肉品類",
+          "itemName": "梅花豬肉",
+          "price": 250,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 250
+            }
+          ]
+        },
+        {
+          "category": "肉品類",
+          "itemName": "羊肉",
+          "price": 280,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 280
+            }
+          ]
+        },
+        {
+          "category": "手工配料",
+          "itemName": "手工燕餃",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "手工配料",
+          "itemName": "手工蛋餃",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "份",
+              "price": 80
+            }
+          ]
+        }
+      ],
+      "phone": "08-7323547",
+      "address": "屏東縣屏東市興市巷13號",
+      "city": "屏東縣"
+    },
+    "原味家旗魚黑輪": {
+      "name": "原味家旗魚黑輪",
+      "type": "便當",
+      "items": [
+        {
+          "category": "炸物類",
+          "itemName": "旗魚黑輪",
+          "price": 12,
+          "sizes": [
+            {
+              "name": "支",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "category": "關東煮類",
+          "itemName": "黑輪",
+          "price": 12,
+          "sizes": [
+            {
+              "name": "支",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "category": "關東煮類",
+          "itemName": "米血",
+          "price": 12,
+          "sizes": [
+            {
+              "name": "支",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "category": "關東煮類",
+          "itemName": "油豆腐",
+          "price": 12,
+          "sizes": [
+            {
+              "name": "塊",
+              "price": 12
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "免費味噌湯",
+          "price": 0,
+          "sizes": [
+            {
+              "name": "碗",
+              "price": 0
+            }
+          ]
+        }
+      ],
+      "phone": "08-7328888",
+      "address": "屏東縣屏東市復興路18號",
+      "city": "屏東縣"
+    },
+    "星巴克 (屏東民生門市)": {
+      "name": "星巴克 (屏東民生門市)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "星冰樂系列",
+          "itemName": "摩卡可可碎片星冰樂",
+          "price": 145,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 145
+            },
+            {
+              "name": "Grande",
+              "price": 165
+            },
+            {
+              "name": "Venti",
+              "price": 185
+            }
+          ]
+        },
+        {
+          "category": "星冰樂系列",
+          "itemName": "焦糖可可碎片星冰樂",
+          "price": 145,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 145
+            },
+            {
+              "name": "Grande",
+              "price": 165
+            },
+            {
+              "name": "Venti",
+              "price": 185
+            }
+          ]
+        },
+        {
+          "category": "星冰樂系列",
+          "itemName": "抹茶可可碎片星冰樂",
+          "price": 145,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 145
+            },
+            {
+              "name": "Grande",
+              "price": 165
+            },
+            {
+              "name": "Venti",
+              "price": 185
+            }
+          ]
+        },
+        {
+          "category": "義式濃縮咖啡",
+          "itemName": "美式咖啡",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 95
+            },
+            {
+              "name": "Grande",
+              "price": 110
+            },
+            {
+              "name": "Venti",
+              "price": 125
+            }
+          ]
+        },
+        {
+          "category": "義式濃縮咖啡",
+          "itemName": "那堤",
+          "price": 120,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 120
+            },
+            {
+              "name": "Grande",
+              "price": 135
+            },
+            {
+              "name": "Venti",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "category": "義式濃縮咖啡",
+          "itemName": "焦糖瑪奇朵",
+          "price": 140,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 140
+            },
+            {
+              "name": "Grande",
+              "price": 155
+            },
+            {
+              "name": "Venti",
+              "price": 170
+            }
+          ]
+        },
+        {
+          "category": "義式濃縮咖啡",
+          "itemName": "摩卡",
+          "price": 135,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 135
+            },
+            {
+              "name": "Grande",
+              "price": 150
+            },
+            {
+              "name": "Venti",
+              "price": 165
+            }
+          ]
+        },
+        {
+          "category": "冷萃與特調",
+          "itemName": "冷萃咖啡",
+          "price": 120,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 120
+            },
+            {
+              "name": "Grande",
+              "price": 140
+            },
+            {
+              "name": "Venti",
+              "price": 160
+            }
+          ]
+        },
+        {
+          "category": "冷萃與特調",
+          "itemName": "香草風味鹹焦糖風味綿雲冷萃咖啡",
+          "price": 145,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 145
+            },
+            {
+              "name": "Grande",
+              "price": 165
+            },
+            {
+              "name": "Venti",
+              "price": 185
+            }
+          ]
+        },
+        {
+          "category": "茶瓦納",
+          "itemName": "福吉茶那堤",
+          "price": 130,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 130
+            },
+            {
+              "name": "Grande",
+              "price": 145
+            },
+            {
+              "name": "Venti",
+              "price": 160
+            }
+          ]
+        },
+        {
+          "category": "茶瓦納",
+          "itemName": "冰搖紅茶",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "Tall",
+              "price": 105
+            },
+            {
+              "name": "Grande",
+              "price": 120
+            },
+            {
+              "name": "Venti",
+              "price": 135
+            }
+          ]
+        }
+      ],
+      "phone": "08-7309118",
+      "address": "屏東縣屏東市民生路309號",
+      "city": "屏東縣"
+    },
+    "麻古茶坊 (屏東中正店)": {
+      "name": "麻古茶坊 (屏東中正店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "高山原葉茶",
+          "itemName": "高山金萱茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "四季春茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "錫蘭紅茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "高山原葉茶",
+          "itemName": "翡翠綠茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 30
+            },
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "柳橙果粒茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            },
+            {
+              "name": "瓶裝",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "翡翠香檸",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "奇異果果粒茶",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 75
+            },
+            {
+              "name": "瓶裝",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "鮮果茶系列",
+          "itemName": "葡萄柚果粒茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            },
+            {
+              "name": "瓶裝",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝芒果果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝葡萄果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌芝芝",
+          "itemName": "芝芝草莓果粒",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "金萱三Q",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "濃醇奶茶",
+          "itemName": "波霸奶茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            },
+            {
+              "name": "瓶裝",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "金萱拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "紅茶拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            },
+            {
+              "name": "瓶裝",
+              "price": 85
+            }
+          ]
+        }
+      ],
+      "phone": "08-7360200",
+      "address": "屏東縣屏東市中正路156號",
+      "city": "屏東縣"
+    },
+    "50嵐 (屏東廣東店)": {
+      "name": "50嵐 (屏東廣東店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "找好茶",
+          "itemName": "茉莉綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "阿薩姆紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "四季春青茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找好茶",
+          "itemName": "凍頂烏龍茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "奶綠",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找奶茶",
+          "itemName": "烏龍奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "波霸奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找口感",
+          "itemName": "珍珠奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找新鮮",
+          "itemName": "檸檬綠茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "找新鮮",
+          "itemName": "葡萄柚綠茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "拿鐵系列",
+          "itemName": "紅茶拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "拿鐵系列",
+          "itemName": "烏龍拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        }
+      ],
+      "phone": "08-7368811",
+      "address": "屏東縣屏東市廣東路600號",
+      "city": "屏東縣"
+    },
+    "迷客夏 (屏東民生店)": {
+      "name": "迷客夏 (屏東民生店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "手作芋頭鮮奶",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 70
+            },
+            {
+              "name": "L",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "珍珠鮮奶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 65
+            },
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "綠光牧場鮮奶",
+          "itemName": "手炒黑糖鮮奶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 65
+            },
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "伯爵紅茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "大正紅茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "肯亞紅茶拿鐵",
+          "itemName": "炒糖鮮奶茶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "大正紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "初露青茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "茉香綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原鄉好茶",
+          "itemName": "琥珀烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "特調果茶",
+          "itemName": "柳丁綠茶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "特調果茶",
+          "itemName": "香檸綠茶",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "08-7333088",
+      "address": "屏東縣屏東市民生路292號",
+      "city": "屏東縣"
+    },
+    "八曜和茶 (屏東廣東店)": {
+      "name": "八曜和茶 (屏東廣東店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "八曜極上採茶",
+          "itemName": "八曜和茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "炙燒濃焙烏龍",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "極上白和茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "八曜極上採茶",
+          "itemName": "穀麥茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "八曜和茶歐蕾",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "炙燒濃焙歐蕾",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "和風鮮奶茶",
+          "itemName": "八曜308",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "柚香覺醒",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "檸檬覺醒",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "百香覺醒",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        }
+      ],
+      "phone": "08-7365522",
+      "address": "屏東縣屏東市廣東路580號",
+      "city": "屏東縣"
+    },
+    "可不可熟成紅茶 (屏東中正店)": {
+      "name": "可不可熟成紅茶 (屏東中正店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "熟成紅茶",
+          "itemName": "熟成紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "麗春紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "太妃紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成紅茶",
+          "itemName": "胭脂紅茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 40
+            },
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "熟成冷露",
+          "itemName": "冷露綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成冷露",
+          "itemName": "熟成冷露",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "熟成檸果",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "春梅冰茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "熟成特調",
+          "itemName": "金蜜紅茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "熟成歐蕾",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "白玉歐蕾",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "熟成歐蕾",
+          "itemName": "冷露歐蕾",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "08-7361133",
+      "address": "屏東縣屏東市中正路138號",
+      "city": "屏東縣"
+    },
+    "烏弄UNUNO (屏東自由店)": {
+      "name": "烏弄UNUNO (屏東自由店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "原生單品茶",
+          "itemName": "阿里山金萱茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            },
+            {
+              "name": "瓶裝",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "原生單品茶",
+          "itemName": "碧螺春綠茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 35
+            },
+            {
+              "name": "瓶裝",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "旺萊紅玉",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "檸檬冬片",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮果純茶",
+          "itemName": "金桔檸檬",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "經典配料特調",
+          "itemName": "杏仁凍冬片",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "經典配料特調",
+          "itemName": "桂花凍紅玉",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "冬片拿鐵",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮奶拿鐵",
+          "itemName": "紅玉拿鐵",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "08-7369988",
+      "address": "屏東縣屏東市自由路588號",
+      "city": "屏東縣"
+    },
+    "得正#OolongTea Top (屏東廣東計劃)": {
+      "name": "得正#OolongTea Top (屏東廣東計劃)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "春烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "輕烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "烏龍茶專賣",
+          "itemName": "焙烏龍",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "春烏龍奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "輕烏龍鮮奶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "鮮奶烏龍",
+          "itemName": "焙烏龍鮮奶",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 60
+            },
+            {
+              "name": "L",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "奶蓋系列",
+          "itemName": "芝士春烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "奶蓋系列",
+          "itemName": "芝士焙烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮果烏龍",
+          "itemName": "檸檬春烏龍",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮果烏龍",
+          "itemName": "香柚春烏龍",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "08-7362255",
+      "address": "屏東縣屏東市廣東路610號",
+      "city": "屏東縣"
+    },
+    "五桐號 (屏東中正店)": {
+      "name": "五桐號 (屏東中正店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "招牌桐茶",
+          "itemName": "五桐茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "招牌桐茶",
+          "itemName": "杏仁凍五桐茶",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 45
+            },
+            {
+              "name": "L",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "招牌桐茶",
+          "itemName": "招牌五桐奶茶",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 50
+            },
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "原茶系列",
+          "itemName": "玉堂春素觀音",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "原茶系列",
+          "itemName": "老料紅茶",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 35
+            },
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "最濃芒果冰沙",
+          "price": 85,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "鮮果特調",
+          "itemName": "青荔凍飲",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "鮮純系列",
+          "itemName": "綠茶拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮純系列",
+          "itemName": "觀音拿鐵",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "M",
+              "price": 55
+            },
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        }
+      ],
+      "phone": "08-7363388",
+      "address": "屏東縣屏東市中正路162號",
+      "city": "屏東縣"
+    },
+    "龜記茗品 (屏東廣東店)": {
+      "name": "龜記茗品 (屏東廣東店)",
+      "type": "飲料",
+      "items": [
+        {
+          "category": "嚴選原茶",
+          "itemName": "三清茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "極品紅茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "翡翠綠茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "嚴選原茶",
+          "itemName": "四季春青茶",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "紅柚翡翠",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "秀水旺梨春",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "招牌特調",
+          "itemName": "蘋果紅宣",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "鮮乳鮮奶",
+          "itemName": "濃乳茶",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "鮮乳鮮奶",
+          "itemName": "雷夢烏龍",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "古早風味",
+          "itemName": "冬瓜檸檬",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "L",
+              "price": 55
+            }
+          ]
+        }
+      ],
+      "phone": "08-7367799",
+      "address": "屏東縣屏東市廣東路592號",
+      "city": "屏東縣"
+    },
+    "正宗鴨肉飯 (高雄建工店)": {
+      "name": "正宗鴨肉飯 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "主食類",
+          "itemName": "鴨肉飯 (大)",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 55
+            },
+            {
+              "name": "大",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "主食類",
+          "itemName": "鴨肉飯 (小)",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 55
+            },
+            {
+              "name": "大",
+              "price": 65
+            }
+          ]
+        },
+        {
+          "category": "主食類",
+          "itemName": "鴨肉麵",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 65
+            },
+            {
+              "name": "大",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "主食類",
+          "itemName": "鴨肉冬粉",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 65
+            },
+            {
+              "name": "大",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "主食類",
+          "itemName": "鴨肉米粉",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 65
+            },
+            {
+              "name": "大",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "切盤類",
+          "itemName": "鴨肉切盤 (1人份)",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "1人份",
+              "price": 70
+            },
+            {
+              "name": "2人份",
+              "price": 140
+            }
+          ]
+        },
+        {
+          "category": "切盤類",
+          "itemName": "鴨後腿",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "切盤類",
+          "itemName": "鴨前翅",
+          "price": 80,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 80
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鴨肉湯",
+          "price": 50,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "下水湯",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鴨心湯",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "鴨血湯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "鴨血",
+          "price": 20,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 20
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "燙青菜",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "魯蛋",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1顆",
+              "price": 15
+            }
+          ]
+        }
+      ],
+      "phone": "07-3903389",
+      "address": "高雄市三民區建工路397號",
+      "city": "高雄市"
+    },
+    "江豪記臭豆腐王 (建工總店)": {
+      "name": "江豪記臭豆腐王 (建工總店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌炸物",
+          "itemName": "招牌酥炸臭豆腐",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 75
+            },
+            {
+              "name": "大",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌炸物",
+          "itemName": "脆皮臭豆腐專用捲",
+          "price": 85,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "清蒸煲類",
+          "itemName": "清蒸臭豆腐 (微辣)",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "麻辣煲類",
+          "itemName": "麻辣鴨血臭豆腐煲",
+          "price": 130,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 130
+            }
+          ]
+        },
+        {
+          "category": "麻辣煲類",
+          "itemName": "麻辣牛肉臭豆腐煲",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 160
+            }
+          ]
+        },
+        {
+          "category": "麻辣煲類",
+          "itemName": "麻辣豬肉臭豆腐煲",
+          "price": 150,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "category": "點心小菜",
+          "itemName": "臭豆腐春捲",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "點心小菜",
+          "itemName": "泡菜",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "飲品類",
+          "itemName": "桂花烏梅汁",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "瓶裝",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "飲品類",
+          "itemName": "古早味紅茶",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "杯裝",
+              "price": 30
+            }
+          ]
+        }
+      ],
+      "phone": "07-3961199",
+      "address": "高雄市三民區建工路427號",
+      "city": "高雄市"
+    },
+    "廣東鴨莊 (高雄建工店)": {
+      "name": "廣東鴨莊 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "燒臘便當",
+          "itemName": "廣式三寶飯",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "烤鴨飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "蜜汁叉燒飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "玫瑰油雞飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "脆皮燒肉飯",
+          "price": 100,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 100
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "鴨腿飯",
+          "price": 120,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 120
+            }
+          ]
+        },
+        {
+          "category": "燒臘便當",
+          "itemName": "招牌四寶飯",
+          "price": 120,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 120
+            }
+          ]
+        },
+        {
+          "category": "單點切盤",
+          "itemName": "烤鴨切盤 (半隻)",
+          "price": 380,
+          "sizes": [
+            {
+              "name": "半隻",
+              "price": 380
+            },
+            {
+              "name": "整隻",
+              "price": 720
+            }
+          ]
+        },
+        {
+          "category": "單點切盤",
+          "itemName": "蜜汁叉燒 (斤)",
+          "price": 280,
+          "sizes": [
+            {
+              "name": "半斤",
+              "price": 140
+            },
+            {
+              "name": "一斤",
+              "price": 280
+            }
+          ]
+        },
+        {
+          "category": "湯品飲料",
+          "itemName": "每日例湯",
+          "price": 0
+        },
+        {
+          "category": "湯品飲料",
+          "itemName": "古早味紅茶",
+          "price": 0
+        }
+      ],
+      "phone": "07-3850123",
+      "address": "高雄市三民區建工路439號",
+      "city": "高雄市"
+    },
+    "丹丹漢堡 (高雄建工店)": {
+      "name": "丹丹漢堡 (高雄建工店)",
+      "type": "其他",
+      "items": [
+        {
+          "category": "中式單點",
+          "itemName": "赤肉麵線羹",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "中式單點",
+          "itemName": "廣東粥",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "西式單點",
+          "itemName": "鮮酥雞",
+          "price": 49,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 49
+            }
+          ]
+        },
+        {
+          "category": "西式單點",
+          "itemName": "脆皮炸雞 (塊)",
+          "price": 49,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 49
+            }
+          ]
+        },
+        {
+          "category": "西式單點",
+          "itemName": "香檸吉司豬排堡",
+          "price": 55,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 55
+            }
+          ]
+        },
+        {
+          "category": "西式單點",
+          "itemName": "烤鳳梨堡",
+          "price": 49,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 49
+            }
+          ]
+        },
+        {
+          "category": "點心類",
+          "itemName": "超長勝香酥米糕",
+          "price": 33,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 33
+            }
+          ]
+        },
+        {
+          "category": "點心類",
+          "itemName": "地瓜薯條",
+          "price": 29,
+          "sizes": [
+            {
+              "name": "單點",
+              "price": 29
+            }
+          ]
+        }
+      ],
+      "phone": "07-3807038",
+      "address": "高雄市三民區建工路222號",
+      "city": "高雄市"
+    },
+    "太師傅便當 (高雄建工店)": {
+      "name": "太師傅便當 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌便當",
+          "itemName": "香酥雞腿飯",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "招牌便當",
+          "itemName": "招牌排骨飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌便當",
+          "itemName": "滷排骨飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌便當",
+          "itemName": "爌肉飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "招牌便當",
+          "itemName": "蒲燒鰻魚飯",
+          "price": 110,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 110
+            }
+          ]
+        },
+        {
+          "category": "熱門便當",
+          "itemName": "香酥雞排飯",
+          "price": 100,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 100
+            }
+          ]
+        },
+        {
+          "category": "熱門便當",
+          "itemName": "宮保雞丁飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "熱門便當",
+          "itemName": "清蒸鱈魚飯",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "熱門便當",
+          "itemName": "燒肉飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "單點項目",
+          "itemName": "單點雞腿",
+          "price": 70,
+          "sizes": [
+            {
+              "name": "1支",
+              "price": 70
+            }
+          ]
+        },
+        {
+          "category": "單點項目",
+          "itemName": "單點排骨",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "1片",
+              "price": 60
+            }
+          ]
+        }
+      ],
+      "phone": "07-3808800",
+      "address": "高雄市三民區建工路412號",
+      "city": "高雄市"
+    },
+    "小南老牌排骨飯 (高雄建工店)": {
+      "name": "小南老牌排骨飯 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "主食便當",
+          "itemName": "特製排骨飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "主食便當",
+          "itemName": "炸雞腿飯",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "主食便當",
+          "itemName": "滷雞腿飯",
+          "price": 105,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 105
+            }
+          ]
+        },
+        {
+          "category": "主食便當",
+          "itemName": "燒肉飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "主食便當",
+          "itemName": "魚排飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "主食便當",
+          "itemName": "控肉飯",
+          "price": 90,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "單點小菜",
+          "itemName": "單點炸排骨",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "1片",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "單點小菜",
+          "itemName": "單點大雞腿",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "1支",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "單點小菜",
+          "itemName": "荷包蛋",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1顆",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "單點小菜",
+          "itemName": "滷豆腐",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1塊",
+              "price": 15
+            }
+          ]
+        }
+      ],
+      "phone": "07-3839900",
+      "address": "高雄市三民區建工路456號",
+      "city": "高雄市"
+    },
+    "梁社漢排骨 (高雄建工店)": {
+      "name": "梁社漢排骨 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "飯類便當",
+          "itemName": "炸排骨飯",
+          "price": 115,
+          "sizes": [
+            {
+              "name": "便當",
+              "price": 115
+            },
+            {
+              "name": "單點",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "飯類便當",
+          "itemName": "滷排骨飯",
+          "price": 115,
+          "sizes": [
+            {
+              "name": "便當",
+              "price": 115
+            },
+            {
+              "name": "單點",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "飯類便當",
+          "itemName": "炸雞腿飯",
+          "price": 130,
+          "sizes": [
+            {
+              "name": "便當",
+              "price": 130
+            },
+            {
+              "name": "單點",
+              "price": 100
+            }
+          ]
+        },
+        {
+          "category": "飯類便當",
+          "itemName": "椒麻雞塊飯",
+          "price": 120,
+          "sizes": [
+            {
+              "name": "便當",
+              "price": 120
+            },
+            {
+              "name": "單點",
+              "price": 90
+            }
+          ]
+        },
+        {
+          "category": "飯類便當",
+          "itemName": "玫瑰油雞腿飯",
+          "price": 125,
+          "sizes": [
+            {
+              "name": "便當",
+              "price": 125
+            },
+            {
+              "name": "單點",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "麵類主食",
+          "itemName": "炸排骨麵",
+          "price": 115,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 115
+            }
+          ]
+        },
+        {
+          "category": "麵類主食",
+          "itemName": "炸雞腿麵",
+          "price": 130,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 130
+            }
+          ]
+        },
+        {
+          "category": "湯品小菜",
+          "itemName": "味噌湯",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "湯品小菜",
+          "itemName": "香菇貢丸湯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 35
+            }
+          ]
+        },
+        {
+          "category": "湯品小菜",
+          "itemName": "秋葵",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 40
+            }
+          ]
+        }
+      ],
+      "phone": "07-3800233",
+      "address": "高雄市三民區建工路420號",
+      "city": "高雄市"
+    },
+    "吉品鐵板燒 (高雄建工店)": {
+      "name": "吉品鐵板燒 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "超值單人套餐",
+          "itemName": "沙朗牛排套餐",
+          "price": 170,
+          "sizes": [
+            {
+              "name": "含白飯/湯/飲料/雙青菜",
+              "price": 170
+            }
+          ]
+        },
+        {
+          "category": "超值單人套餐",
+          "itemName": "醬燒豬肉套餐",
+          "price": 150,
+          "sizes": [
+            {
+              "name": "含白飯/湯/飲料/雙青菜",
+              "price": 150
+            }
+          ]
+        },
+        {
+          "category": "超值單人套餐",
+          "itemName": "香煎雞腿排套餐",
+          "price": 180,
+          "sizes": [
+            {
+              "name": "含白飯/湯/飲料/雙青菜",
+              "price": 180
+            }
+          ]
+        },
+        {
+          "category": "超值單人套餐",
+          "itemName": "鮮蚵套餐",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "含白飯/湯/飲料/雙青菜",
+              "price": 160
+            }
+          ]
+        },
+        {
+          "category": "超值單人套餐",
+          "itemName": "草蝦套餐",
+          "price": 180,
+          "sizes": [
+            {
+              "name": "含白飯/湯/飲料/雙青菜",
+              "price": 180
+            }
+          ]
+        },
+        {
+          "category": "單點海鮮",
+          "itemName": "鐵板豆腐",
+          "price": 60,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 60
+            }
+          ]
+        },
+        {
+          "category": "單點海鮮",
+          "itemName": "九層塔香蛋",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "單點海鮮",
+          "itemName": "蔥爆羊肉",
+          "price": 160,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 160
+            }
+          ]
+        }
+      ],
+      "phone": "07-3831122",
+      "address": "高雄市三民區建工路408號",
+      "city": "高雄市"
+    },
+    "老周燒肉飯 (高雄建工店)": {
+      "name": "老周燒肉飯 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌飯類",
+          "itemName": "招牌燒肉飯",
+          "price": 65,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 65
+            },
+            {
+              "name": "大",
+              "price": 85
+            }
+          ]
+        },
+        {
+          "category": "招牌飯類",
+          "itemName": "雞腿飯",
+          "price": 95,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 95
+            }
+          ]
+        },
+        {
+          "category": "招牌飯類",
+          "itemName": "肉燥飯",
+          "price": 35,
+          "sizes": [
+            {
+              "name": "小",
+              "price": 35
+            },
+            {
+              "name": "大",
+              "price": 50
+            }
+          ]
+        },
+        {
+          "category": "招牌飯類",
+          "itemName": "爌肉飯",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "味噌湯",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "蛤仔湯",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 40
+            }
+          ]
+        },
+        {
+          "category": "湯品類",
+          "itemName": "魚丸湯",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "1碗",
+              "price": 30
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "油豆腐",
+          "price": 10,
+          "sizes": [
+            {
+              "name": "1塊",
+              "price": 10
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "滷蛋",
+          "price": 15,
+          "sizes": [
+            {
+              "name": "1顆",
+              "price": 15
+            }
+          ]
+        },
+        {
+          "category": "小菜類",
+          "itemName": "筍干",
+          "price": 30,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 30
+            }
+          ]
+        }
+      ],
+      "phone": "07-3821888",
+      "address": "高雄市三民區建工路482號",
+      "city": "高雄市"
+    },
+    "豚將日本拉麵 (高雄建工店)": {
+      "name": "豚將日本拉麵 (高雄建工店)",
+      "type": "便當",
+      "items": [
+        {
+          "category": "招牌拉麵",
+          "itemName": "特濃豚骨拉麵",
+          "price": 130,
+          "sizes": [
+            {
+              "name": "平日免費無限加麵",
+              "price": 130
+            }
+          ]
+        },
+        {
+          "category": "招牌拉麵",
+          "itemName": "地獄麻辣拉麵",
+          "price": 145,
+          "sizes": [
+            {
+              "name": "平日免費無限加麵",
+              "price": 145
+            }
+          ]
+        },
+        {
+          "category": "招牌拉麵",
+          "itemName": "醬油拉麵",
+          "price": 110,
+          "sizes": [
+            {
+              "name": "平日免費無限加麵",
+              "price": 110
+            }
+          ]
+        },
+        {
+          "category": "招牌拉麵",
+          "itemName": "奶油味噌拉麵",
+          "price": 135,
+          "sizes": [
+            {
+              "name": "平日免費無限加麵",
+              "price": 135
+            }
+          ]
+        },
+        {
+          "category": "炸物小吃",
+          "itemName": "唐揚炸雞",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "炸物小吃",
+          "itemName": "酥炸豬排",
+          "price": 75,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 75
+            }
+          ]
+        },
+        {
+          "category": "炸物小吃",
+          "itemName": "揚出豆腐",
+          "price": 45,
+          "sizes": [
+            {
+              "name": "1份",
+              "price": 45
+            }
+          ]
+        },
+        {
+          "category": "單點配料",
+          "itemName": "溏心蛋",
+          "price": 25,
+          "sizes": [
+            {
+              "name": "1顆",
+              "price": 25
+            }
+          ]
+        },
+        {
+          "category": "單點配料",
+          "itemName": "叉燒肉片",
+          "price": 40,
+          "sizes": [
+            {
+              "name": "2片",
+              "price": 40
+            }
+          ]
+        }
+      ],
+      "phone": "07-3835566",
+      "address": "高雄市三民區建工路460號",
+      "city": "高雄市"
+    }
+  },
+  "sessions": [],
+  "orders": [],
+  "organizers": [],
+  "auditLogs": []
+}

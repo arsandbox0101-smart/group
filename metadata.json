@@ -1,0 +1,6 @@
+{
+  "name": "團購智慧平台",
+  "description": "智慧團購平台，支援團購商品、生活用品、便當飲料開團與訂購，提供個人 LINE 訂購單即時通知與承辦人 CE Notify 控制",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

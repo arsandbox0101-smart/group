@@ -1,0 +1,24 @@
+{
+  "short_name": "智慧團購",
+  "name": "智慧團購 - 辦公室團購合購平台",
+  "description": "辦公室午餐與下午茶點餐團購合購系統",
+  "icons": [
+    {
+      "src": "/pwa-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "display": "standalone",
+  "orientation": "portrait"
+}
