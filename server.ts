@@ -199,32 +199,106 @@ function getInitialSeedData(): DBData {
   };
 }
 
+let inMemoryDBCache: DBData | null = null;
+let isCloudSyncing = false;
+
+// ☁️ Upstash Redis 雲端永久儲存引擎 (Upstash Redis Persistence Engine)
+async function syncFromCloudDB(): Promise<DBData | null> {
+  const upstashUrl = process.env.UPSTASH_REDIS_REST_URL;
+  const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const redisKey = process.env.UPSTASH_REDIS_KEY || "smartgroup_db";
+
+  if (!upstashUrl || !upstashToken) {
+    console.log("ℹ️ [Upstash Redis] 未偵測到 UPSTASH_REDIS_REST_URL / TOKEN，使用純本地/記憶體模式。");
+    return null;
+  }
+
+  try {
+    console.log(`☁️ [Upstash Redis] 正在從雲端讀取 Key: "${redisKey}" ...`);
+    const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/get/${redisKey}`, {
+      headers: { Authorization: `Bearer ${upstashToken}` },
+    });
+    if (res.ok) {
+      const json = await res.json();
+      if (json.result) {
+        const cloudData = typeof json.result === "string" ? JSON.parse(json.result) : json.result;
+        if (cloudData && typeof cloudData === "object" && (cloudData.vendors || cloudData.sessions)) {
+          console.log(`✅ [Upstash Redis] 成功從雲端載入最新資料庫 (Key: "${redisKey}")！`);
+          return cloudData;
+        }
+      } else {
+        console.log(`ℹ️ [Upstash Redis] 雲端 Key "${redisKey}" 尚無資料，將於第一次操作時自動建立。`);
+      }
+    } else {
+      console.error(`⚠️ [Upstash Redis] 讀取失敗，HTTP 狀態碼: ${res.status}`);
+    }
+  } catch (err) {
+    console.error("⚠️ [Upstash Redis] 雲端讀取發生異常，使用本地備份:", err);
+  }
+
+  return null;
+}
+
+async function syncToCloudDB(data: DBData) {
+  const upstashUrl = process.env.UPSTASH_REDIS_REST_URL;
+  const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
+  const redisKey = process.env.UPSTASH_REDIS_KEY || "smartgroup_db";
+
+  if (!upstashUrl || !upstashToken) {
+    return; // 未設定 Upstash 環境變數
+  }
+
+  if (isCloudSyncing) return;
+  isCloudSyncing = true;
+
+  try {
+    const jsonStr = JSON.stringify(data);
+    const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/set/${redisKey}`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${upstashToken}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify([jsonStr]),
+    });
+    if (res.ok) {
+      console.log(`⚡ [Upstash Redis] 資料已即時同步儲存至雲端 (Key: "${redisKey}")`);
+    } else {
+      console.error(`⚠️ [Upstash Redis] 寫入雲端失敗，HTTP 狀態碼: ${res.status}`);
+    }
+  } catch (err) {
+    console.error("⚠️ [Upstash Redis] 同步推送到雲端時發生錯誤:", err);
+  } finally {
+    isCloudSyncing = false;
+  }
+}
+
 function loadDB(): DBData {
+  if (inMemoryDBCache) {
+    return inMemoryDBCache;
+  }
+
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
     }
     if (fs.existsSync(DB_FILE)) {
       const data = fs.readFileSync(DB_FILE, "utf-8");
-      return JSON.parse(data);
+      inMemoryDBCache = JSON.parse(data);
+      return inMemoryDBCache!;
     }
   } catch (err) {
     console.error("Error reading database file:", err);
   }
 
   const initial = getInitialSeedData();
-  // set session id for initial sample orders
-  if (initial.sessions.length > 0) {
-    const activeId = initial.sessions[0].sessionId;
-    initial.orders.forEach((o) => {
-      if (!o.sessionId) o.sessionId = activeId;
-    });
-  }
+  inMemoryDBCache = initial;
   saveDB(initial);
   return initial;
 }
 
 function saveDB(data: DBData) {
+  inMemoryDBCache = data;
   try {
     if (!fs.existsSync(DATA_DIR)) {
       fs.mkdirSync(DATA_DIR, { recursive: true });
@@ -245,14 +319,33 @@ function saveDB(data: DBData) {
   } catch (err) {
     console.error("Error writing database file:", err);
   }
+
+  // 非同步背景推送到雲端資料庫
+  syncToCloudDB(data).catch(() => {});
 }
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+
+  // 啟動伺服器前先嘗試從雲端復原最新資料
+  const cloudData = await syncFromCloudDB();
+  if (cloudData) {
+    inMemoryDBCache = cloudData;
+    try {
+      if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+      fs.writeFileSync(DB_FILE, JSON.stringify(cloudData, null, 2), "utf-8");
+      console.log("💾 [Cloud DB] 已成功將雲端資料庫同步至本地副本 (db.json)");
+    } catch (e) {
+      console.error("Failed to write local backup copy", e);
+    }
+  } else {
+    loadDB();
+  }
 
   app.use(express.json({ limit: "50mb" }));
   app.use(express.urlencoded({ limit: "50mb", extended: true }));
+
 
   // Helper to get active session
   const getActiveSession = (db: DBData) => {
