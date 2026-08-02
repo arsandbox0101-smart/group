@@ -239,6 +239,8 @@ async function syncFromCloudDB(): Promise<DBData | null> {
   return null;
 }
 
+let pendingCloudSyncData: DBData | null = null;
+
 async function syncToCloudDB(data: DBData) {
   const upstashUrl = process.env.UPSTASH_REDIS_REST_URL;
   const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
@@ -248,23 +250,33 @@ async function syncToCloudDB(data: DBData) {
     return; // 未設定 Upstash 環境變數
   }
 
+  // Queue the latest database snapshot
+  pendingCloudSyncData = data;
+
   if (isCloudSyncing) return;
   isCloudSyncing = true;
 
   try {
-    const jsonStr = JSON.stringify(data);
-    const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/set/${redisKey}`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${upstashToken}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify([jsonStr]),
-    });
-    if (res.ok) {
-      console.log(`⚡ [Upstash Redis] 資料已即時同步儲存至雲端 (Key: "${redisKey}")`);
-    } else {
-      console.error(`⚠️ [Upstash Redis] 寫入雲端失敗，HTTP 狀態碼: ${res.status}`);
+    while (pendingCloudSyncData) {
+      const dataToSync = pendingCloudSyncData;
+      pendingCloudSyncData = null;
+
+      const jsonStr = JSON.stringify(dataToSync);
+      const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/set/${redisKey}`, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${upstashToken}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify([jsonStr]),
+      });
+
+      if (res.ok) {
+        console.log(`⚡ [Upstash Redis] 資料已即時同步儲存至雲端 (Key: "${redisKey}")`);
+      } else {
+        const errText = await res.text().catch(() => "");
+        console.error(`⚠️ [Upstash Redis] 寫入雲端失敗 HTTP ${res.status}: ${errText}`);
+      }
     }
   } catch (err) {
     console.error("⚠️ [Upstash Redis] 同步推送到雲端時發生錯誤:", err);
@@ -324,6 +336,21 @@ function saveDB(data: DBData) {
   syncToCloudDB(data).catch(() => {});
 }
 
+function sanitizeVendorCategories(db: DBData): boolean {
+  let changed = false;
+  if (db && db.vendors) {
+    Object.keys(db.vendors).forEach((key) => {
+      const v = db.vendors[key];
+      if (v && v.name && v.name.includes("丹丹") && v.type !== "便當") {
+        console.log(`🔧 [DB Auto-Fix] 已將「${v.name}」分類從「${v.type}」自動更正為「便當」（便當/主餐）`);
+        v.type = "便當";
+        changed = true;
+      }
+    });
+  }
+  return changed;
+}
+
 async function startServer() {
   const app = express();
   const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
@@ -341,6 +368,14 @@ async function startServer() {
     }
   } else {
     loadDB();
+  }
+
+  // 檢查並自動修正店家分類資料（如丹丹漢堡 -> 便當/主餐）
+  if (inMemoryDBCache) {
+    const isFixed = sanitizeVendorCategories(inMemoryDBCache);
+    if (isFixed) {
+      saveDB(inMemoryDBCache);
+    }
   }
 
   app.use(express.json({ limit: "50mb" }));

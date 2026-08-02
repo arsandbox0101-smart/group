@@ -62,13 +62,13 @@ export default function App() {
 
   // Load user name, department, line token, and organizer session from localStorage
   useEffect(() => {
-    const savedName = localStorage.getItem('order_user_name');
+    let savedName = localStorage.getItem('order_user_name') || '';
     if (savedName) setUserName(savedName);
 
-    const savedDept = localStorage.getItem('order_user_department');
+    let savedDept = localStorage.getItem('order_user_department') || '';
     if (savedDept) setUserDepartment(savedDept);
 
-    const savedToken = localStorage.getItem('order_user_line_token');
+    let savedToken = localStorage.getItem('order_user_line_token') || '';
     if (savedToken) setUserLineToken(savedToken);
 
     const savedOrgJson = localStorage.getItem('order_current_organizer');
@@ -76,6 +76,21 @@ export default function App() {
       try {
         const parsed = JSON.parse(savedOrgJson);
         setCurrentOrganizer(parsed);
+
+        // Auto sync organizer identity to buyer profile if buyer profile is not set
+        if (!savedName && parsed.name) {
+          setUserName(parsed.name);
+          localStorage.setItem('order_user_name', parsed.name);
+        }
+        if (!savedDept && parsed.department) {
+          setUserDepartment(parsed.department);
+          localStorage.setItem('order_user_department', parsed.department);
+        }
+        if (!savedToken && (parsed.token || parsed.lineNotifyToken)) {
+          const t = parsed.token || parsed.lineNotifyToken;
+          setUserLineToken(t);
+          localStorage.setItem('order_user_line_token', t);
+        }
       } catch (e) {
         localStorage.removeItem('order_current_organizer');
       }
@@ -112,10 +127,25 @@ export default function App() {
     if (org) {
       setIsBuyerDedicatedLink(false);
       localStorage.setItem('order_current_organizer', JSON.stringify(org));
-      showToast('success', `🎉 歡迎承辦人「${org.name}」登入！全功能管理選單已解鎖。`);
+
+      // Auto-sync Organizer identity to Buyer identity so top-right profile and ordering identity match automatically
+      if (org.name) {
+        setUserName(org.name);
+        localStorage.setItem('order_user_name', org.name);
+      }
+      if (org.department) {
+        setUserDepartment(org.department);
+        localStorage.setItem('order_user_department', org.department);
+      }
+      if (org.token) {
+        setUserLineToken(org.token);
+        localStorage.setItem('order_user_line_token', org.token);
+      }
+
+      showToast('success', `🎉 歡迎承辦人「${org.name}」登入！已自動連動訂購人身分「${org.name}」，全功能管理選單已解鎖。`);
     } else {
       localStorage.removeItem('order_current_organizer');
-      showToast('success', '已切換回「一般訂購人模式」');
+      showToast('success', '已切換回「一般訂購人模式」（已為您保留訂購人身分）');
       if (activeTab === 'admin' || activeTab === 'menu' || activeTab === 'history') {
         setActiveTab('order');
       }
@@ -220,8 +250,20 @@ export default function App() {
 
   // Submit Order
   const handleSubmitOrder = async () => {
-    if (!userName) {
-      showToast('error', '請先設定您的姓名！');
+    let effectiveName = userName.trim();
+    let effectiveDept = userDepartment.trim();
+
+    if (!effectiveName && currentOrganizer?.name) {
+      effectiveName = currentOrganizer.name;
+      effectiveDept = currentOrganizer.department || '';
+      setUserName(effectiveName);
+      if (effectiveDept) setUserDepartment(effectiveDept);
+      localStorage.setItem('order_user_name', effectiveName);
+      if (effectiveDept) localStorage.setItem('order_user_department', effectiveDept);
+    }
+
+    if (!effectiveName) {
+      showToast('error', '請先點擊右上角「訂購人」設定您的姓名！');
       return;
     }
     if (cart.length === 0) {
@@ -229,11 +271,11 @@ export default function App() {
       return;
     }
     if (!activeSession) {
-      showToast('error', '當前無開放中的團購');
+      showToast('error', '當前無開放中的團購活動');
       return;
     }
 
-    const displayName = userDepartment ? `${userName} (${userDepartment})` : userName;
+    const displayName = effectiveDept ? `${effectiveName} (${effectiveDept})` : effectiveName;
 
     setIsSubmitting(true);
     try {

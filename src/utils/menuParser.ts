@@ -32,6 +32,9 @@ export function detectStoreType(storeName: string | null, items: MenuItem[], raw
   };
 
   // 1. Store name explicit keyword matching (+10 points)
+  if (/(丹丹|丹丹漢堡)/.test(name)) {
+    scores['便當'] += 15;
+  }
   if (/(茶|奶茶|手搖|飲料|咖啡|拿鐵|清心|50嵐|珍煮丹|麻古|可不可|迷客夏|龜記|五桐號|再睡5分鐘|一紀|八曜|和茶|飲品|鮮奶茶|烏龍|綠茶|紅茶|青茶|水果茶|冬瓜|冰沙|果汁|連鎖飲料|水茶|茶飲|特調|星巴克|路易莎|cama|得正|大苑子|萬波|先喝道|叮哥|鶴茶樓|一芳|康青龍)/.test(name)) {
     scores['飲料'] += 10;
   }
