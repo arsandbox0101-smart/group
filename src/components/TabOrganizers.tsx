@@ -19,7 +19,11 @@ import {
   EyeOff,
   Sparkles,
   ShieldAlert,
-  Phone
+  Phone,
+  Download,
+  Upload,
+  Database,
+  RefreshCw
 } from 'lucide-react';
 import { Organizer } from '../types';
 
@@ -122,6 +126,50 @@ export const TabOrganizers: React.FC<TabOrganizersProps> = ({
   const [resetOtpMsg, setResetOtpMsg] = useState<string | null>(null);
   const [resetOtpSimulated, setResetOtpSimulated] = useState<string | null>(null);
   const [isSendingOtp, setIsSendingOtp] = useState(false);
+
+  // Backup & Restore state
+  const [isRestoring, setIsRestoring] = useState(false);
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  const handleExportBackup = () => {
+    window.location.href = '/api/backup-database';
+  };
+
+  const handleImportBackup = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const text = event.target?.result as string;
+        const parsed = JSON.parse(text);
+        if (!parsed || typeof parsed !== 'object') {
+          alert('備份檔案格式不符合 JSON 規範！');
+          return;
+        }
+        setIsRestoring(true);
+        const res = await fetch('/api/restore-database', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ data: parsed }),
+        });
+        const resData = await res.json();
+        if (res.ok) {
+          alert('🎉 資料庫已成功匯入還原！系統即將重新整理畫面。');
+          window.location.reload();
+        } else {
+          alert(resData.error || '匯入資料庫失敗');
+        }
+      } catch (err) {
+        alert('解析備份檔案失敗，請確保選取正確的 SmartGroup JSON 備份檔');
+      } finally {
+        setIsRestoring(false);
+        if (fileInputRef.current) fileInputRef.current.value = '';
+      }
+    };
+    reader.readAsText(file);
+  };
 
   // Auto-lock helper
   const unlockOrganizerWithAutoLock = (orgId: string) => {
@@ -488,6 +536,53 @@ export const TabOrganizers: React.FC<TabOrganizersProps> = ({
           <ExternalLink className="w-3.5 h-3.5" />
           立即加入 CE Notify
         </a>
+      </div>
+
+      {/* Database Protection & Backup/Restore Card */}
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md border border-indigo-800/40">
+        <div className="flex items-start gap-3">
+          <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold flex-shrink-0 border border-indigo-500/30">
+            <Database className="w-5 h-5" />
+          </div>
+          <div className="text-xs space-y-1">
+            <div className="flex items-center gap-2">
+              <span className="font-black text-sm text-white">資料庫持久保存與雙向防護機制</span>
+              <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                🛡️ 瀏覽器快照自動救援運行中
+              </span>
+            </div>
+            <p className="text-slate-300 leading-relaxed max-w-2xl">
+              已啟用客戶端自動快照機制！即使伺服器容器休眠重啟，系統亦會在您開啟網頁時智慧對齊復原建立的負責人與店家商品。您亦可隨時匯出整份資料庫備份檔案。
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 flex-shrink-0 w-full sm:w-auto justify-end">
+          <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleImportBackup}
+            accept=".json"
+            className="hidden"
+          />
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            disabled={isRestoring}
+            className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95"
+            title="從先前下載的 JSON 備份檔還原"
+          >
+            <Upload className="w-3.5 h-3.5 text-indigo-400" />
+            {isRestoring ? '還原中...' : '匯入還原'}
+          </button>
+          <button
+            onClick={handleExportBackup}
+            className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm shadow-indigo-500/30"
+            title="下載整份資料庫 JSON 備份檔（包含店家、菜單、負責人與歷史資料）"
+          >
+            <Download className="w-3.5 h-3.5" />
+            匯出備份 (JSON)
+          </button>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">

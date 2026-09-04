@@ -174,14 +174,80 @@ export default function App() {
     }, 3500);
   };
 
-  // Fetch initial data from Express backend
+  // Fetch initial data from Express backend with Self-Healing Auto-Recovery
   const loadInitialData = async () => {
     try {
       const res = await fetch('/api/initial-data');
       if (res.ok) {
-        const data: InitialDataResponse = await res.json();
-        setVendors(data.vendors || {});
-        setOrganizers(data.organizers || []);
+        let data: InitialDataResponse = await res.json();
+        let serverVendors = data.vendors || {};
+        let serverOrganizers = data.organizers || [];
+
+        // 🛡️ Client-Side Dual-Backup & Self-Healing Auto-Recovery
+        // 檢查瀏覽器本地備份是否有伺服器因容器休眠重啟 (Scale-to-Zero) 而遺失的資料
+        try {
+          const cachedOrgStr = localStorage.getItem('sg_cached_organizers');
+          const cachedVendorsStr = localStorage.getItem('sg_cached_vendors');
+
+          const cachedOrgs: Organizer[] = cachedOrgStr ? JSON.parse(cachedOrgStr) : [];
+          const cachedVendors: Record<string, any> = cachedVendorsStr ? JSON.parse(cachedVendorsStr) : {};
+
+          // 判斷伺服器是否缺少本機曾經建立過的負責人
+          const missingOrgs = cachedOrgs.filter(
+            (co) => !serverOrganizers.some((so) => so.name === co.name || so.id === co.id)
+          );
+
+          // 判斷伺服器是否缺少本機更新過或新加入的店家與菜單
+          const missingVendors: Record<string, any> = {};
+          let hasMissingVendors = false;
+          Object.keys(cachedVendors).forEach((k) => {
+            const cv = cachedVendors[k];
+            const sv = serverVendors[k];
+            if (!sv || (Array.isArray(cv.items) && (!sv.items || cv.items.length > sv.items.length))) {
+              missingVendors[k] = cv;
+              hasMissingVendors = true;
+            }
+          });
+
+          if (missingOrgs.length > 0 || hasMissingVendors) {
+            console.log(
+              `🛡️ [Self-Healing] 偵測到伺服器可能剛經歷容器冷重啟，缺少 ${missingOrgs.length} 位負責人及店家更新，啟動自動雙向復原...`
+            );
+            const recoveryRes = await fetch('/api/sync-recovery', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                organizers: cachedOrgs,
+                vendors: cachedVendors,
+              }),
+            });
+
+            if (recoveryRes.ok) {
+              const recData = await recoveryRes.json();
+              if (recData.restored) {
+                serverOrganizers = recData.organizers || serverOrganizers;
+                serverVendors = recData.vendors || serverVendors;
+                showToast(
+                  'success',
+                  '🛡️ 系統已自動從瀏覽器持久快照為您復原開團負責人與店家商品資料！'
+                );
+              }
+            }
+          }
+        } catch (recoveryErr) {
+          console.warn('Auto recovery check encountered warning:', recoveryErr);
+        }
+
+        // 更新本地持久快照，確保本地持有最新完整資料
+        if (serverOrganizers && serverOrganizers.length > 0) {
+          localStorage.setItem('sg_cached_organizers', JSON.stringify(serverOrganizers));
+        }
+        if (serverVendors && Object.keys(serverVendors).length > 0) {
+          localStorage.setItem('sg_cached_vendors', JSON.stringify(serverVendors));
+        }
+
+        setVendors(serverVendors);
+        setOrganizers(serverOrganizers);
         setRecentOrders(data.recentOrders || []);
         setAllSessions(data.allSessions || []);
         setAuditLogs(data.auditLogs || []);
@@ -541,6 +607,18 @@ export default function App() {
       });
 
       if (res.ok) {
+        try {
+          const cachedVendorsStr = localStorage.getItem('sg_cached_vendors');
+          const cachedVendors = cachedVendorsStr ? JSON.parse(cachedVendorsStr) : {};
+          if (originalName && originalName !== name) {
+            delete cachedVendors[originalName];
+          }
+          cachedVendors[name] = { name, type, items, phone, address, city };
+          localStorage.setItem('sg_cached_vendors', JSON.stringify(cachedVendors));
+        } catch (e) {
+          console.warn('Failed to cache vendor locally:', e);
+        }
+
         showToast('success', `已更換並更新 「${name}」 菜單與價格`);
         await loadInitialData();
         return true;
@@ -563,6 +641,17 @@ export default function App() {
         method: 'DELETE',
       });
       if (res.ok) {
+        try {
+          const cachedVendorsStr = localStorage.getItem('sg_cached_vendors');
+          if (cachedVendorsStr) {
+            const cachedVendors = JSON.parse(cachedVendorsStr);
+            delete cachedVendors[storeName];
+            localStorage.setItem('sg_cached_vendors', JSON.stringify(cachedVendors));
+          }
+        } catch (e) {
+          console.warn('Failed to remove vendor from cache:', e);
+        }
+
         showToast('success', `已刪除 「${storeName}」 菜單`);
         await loadInitialData();
       }
@@ -592,6 +681,31 @@ export default function App() {
 
       const data = await res.json();
       if (res.ok && data.success) {
+        try {
+          const cachedOrgStr = localStorage.getItem('sg_cached_organizers');
+          let cachedOrgs: Organizer[] = cachedOrgStr ? JSON.parse(cachedOrgStr) : [];
+          const existingIdx = id
+            ? cachedOrgs.findIndex((o) => o.id === id)
+            : cachedOrgs.findIndex((o) => o.name === name);
+          const savedOrg: Organizer = {
+            id: id || 'ORG' + Date.now(),
+            name,
+            phone: phone || '',
+            token: token || '',
+            department: department || '一般',
+            notifyInfo: notifyInfo || '團購資訊',
+            password: password || '',
+          };
+          if (existingIdx >= 0) {
+            cachedOrgs[existingIdx] = { ...cachedOrgs[existingIdx], ...savedOrg };
+          } else {
+            cachedOrgs.push(savedOrg);
+          }
+          localStorage.setItem('sg_cached_organizers', JSON.stringify(cachedOrgs));
+        } catch (e) {
+          console.warn('Failed to cache organizer locally:', e);
+        }
+
         showToast('success', id ? `已更換承辦人「${name}」資料` : `新增承辦人「${name}」成功！`);
         await loadInitialData();
         return { success: true };
@@ -617,6 +731,17 @@ export default function App() {
       const data = await res.json();
 
       if (res.ok && data.success) {
+        try {
+          const cachedOrgStr = localStorage.getItem('sg_cached_organizers');
+          if (cachedOrgStr) {
+            let cachedOrgs: Organizer[] = JSON.parse(cachedOrgStr);
+            cachedOrgs = cachedOrgs.filter((o) => o.id !== id);
+            localStorage.setItem('sg_cached_organizers', JSON.stringify(cachedOrgs));
+          }
+        } catch (e) {
+          console.warn('Failed to remove organizer from cache:', e);
+        }
+
         showToast('success', '已成功刪除該承辦人');
         await loadInitialData();
         return { success: true };

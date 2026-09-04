@@ -4944,7 +4944,7 @@
     },
     "丹丹漢堡 (高雄建工店)": {
       "name": "丹丹漢堡 (高雄建工店)",
-      "type": "其他",
+      "type": "便當",
       "items": [
         {
           "category": "中式單點",
@@ -5762,6 +5762,23 @@
   },
   "sessions": [],
   "orders": [],
-  "organizers": [],
-  "auditLogs": []
+  "organizers": [
+    {
+      "id": "TEST1",
+      "name": "測試員",
+      "phone": "0900000000",
+      "token": ""
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "LOG1788497370517908",
+      "timestamp": "2026/9/4 下午12:49:30",
+      "action": "AUTO_RECOVERY",
+      "actor": "系統防護機制",
+      "details": "已自動從瀏覽器持久快照同步復原遺失的負責人及店家菜單資料",
+      "severity": "info",
+      "ip": "127.0.0.1"
+    }
+  ]
 }

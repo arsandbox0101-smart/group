@@ -1424,6 +1424,97 @@ async function startServer() {
     res.json({ success: true, message: "資料庫內容已全數清空！", data: newDb });
   });
 
+  // 7. Client-Side Self-Healing Auto-Recovery API (自動救援與資料同步)
+  app.post("/api/sync-recovery", (req, res) => {
+    const { organizers, vendors } = req.body;
+    const db = loadDB();
+    let updated = false;
+
+    if (Array.isArray(organizers) && organizers.length > 0) {
+      organizers.forEach((localOrg: Organizer) => {
+        if (!localOrg || !localOrg.name) return;
+        const exists = db.organizers.find((o) => o.id === localOrg.id || o.name === localOrg.name);
+        if (!exists) {
+          db.organizers.push(localOrg);
+          updated = true;
+        }
+      });
+    }
+
+    if (vendors && typeof vendors === "object") {
+      Object.keys(vendors).forEach((storeName) => {
+        const v = vendors[storeName];
+        if (v && v.name && v.items) {
+          if (!db.vendors[storeName]) {
+            db.vendors[storeName] = v;
+            updated = true;
+          } else {
+            if (v.items.length > (db.vendors[storeName].items?.length || 0)) {
+              db.vendors[storeName] = v;
+              updated = true;
+            }
+          }
+        }
+      });
+    }
+
+    if (updated) {
+      console.log("🛡️ [Self-Healing] 已成功從客戶端本地持久快照自動救援復原資料！");
+      addAuditLog(db, "AUTO_RECOVERY", "系統防護機制", "已自動從瀏覽器持久快照同步復原遺失的負責人及店家菜單資料", "info");
+      saveDB(db);
+    }
+
+    res.json({
+      success: true,
+      restored: updated,
+      organizers: db.organizers,
+      vendors: db.vendors,
+    });
+  });
+
+  // 8. Database Backup Export & Restore
+  app.get("/api/backup-database", (req, res) => {
+    const db = loadDB();
+    res.setHeader("Content-Disposition", `attachment; filename=smartgroup-backup-${Date.now()}.json`);
+    res.setHeader("Content-Type", "application/json");
+    res.send(JSON.stringify(db, null, 2));
+  });
+
+  app.post("/api/restore-database", (req, res) => {
+    const { data } = req.body;
+    if (!data || typeof data !== "object") {
+      return res.status(400).json({ error: "備份資料格式不正確" });
+    }
+    const db = loadDB();
+    if (data.vendors && typeof data.vendors === "object") {
+      db.vendors = { ...db.vendors, ...data.vendors };
+    }
+    if (Array.isArray(data.organizers)) {
+      data.organizers.forEach((o: any) => {
+        if (!db.organizers.some((existing) => existing.name === o.name || existing.id === o.id)) {
+          db.organizers.push(o);
+        }
+      });
+    }
+    if (Array.isArray(data.sessions)) {
+      data.sessions.forEach((s: any) => {
+        if (!db.sessions.some((existing) => existing.sessionId === s.sessionId)) {
+          db.sessions.push(s);
+        }
+      });
+    }
+    if (Array.isArray(data.orders)) {
+      data.orders.forEach((ord: any) => {
+        if (!db.orders.some((existing) => existing.orderId === ord.orderId)) {
+          db.orders.push(ord);
+        }
+      });
+    }
+    addAuditLog(db, "DATABASE_RESTORED", "系統管理員", "已透過 JSON 備份檔成功匯入還原資料庫", "info");
+    saveDB(db);
+    res.json({ success: true, message: "資料庫已成功匯入還原！", db });
+  });
+
   // Vite Middleware for dev & static for prod
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
