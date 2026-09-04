@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Users,
   Key,
@@ -129,7 +129,49 @@ export const TabOrganizers: React.FC<TabOrganizersProps> = ({
 
   // Backup & Restore state
   const [isRestoring, setIsRestoring] = useState(false);
+  const [isCloudSyncingNow, setIsCloudSyncingNow] = useState(false);
+  const [cloudStatus, setCloudStatus] = useState<{
+    configured: boolean;
+    connected: boolean;
+    redisKey: string;
+    cloudStats?: { vendorCount: number; organizerCount: number; sessionCount: number; orderCount: number };
+    localStats?: { vendorCount: number; organizerCount: number; sessionCount: number; orderCount: number };
+    errorMessage?: string | null;
+  } | null>(null);
   const fileInputRef = React.useRef<HTMLInputElement>(null);
+
+  const fetchCloudStatus = async () => {
+    try {
+      const res = await fetch('/api/cloud-status');
+      if (res.ok) {
+        const data = await res.json();
+        setCloudStatus(data);
+      }
+    } catch {
+      // ignore
+    }
+  };
+
+  useEffect(() => {
+    fetchCloudStatus();
+  }, []);
+
+  const handleManualCloudSync = async () => {
+    try {
+      setIsCloudSyncingNow(true);
+      const res = await fetch('/api/cloud-sync-now', { method: 'POST' });
+      if (res.ok) {
+        alert('⚡ 資料庫已成功強制同步至 Upstash 雲端！');
+        await fetchCloudStatus();
+      } else {
+        alert('同步至雲端失敗，請確認 Render 上的 Upstash 環境變數');
+      }
+    } catch (e: any) {
+      alert('同步失敗: ' + (e?.message || '網路異常'));
+    } finally {
+      setIsCloudSyncingNow(false);
+    }
+  };
 
   const handleExportBackup = () => {
     window.location.href = '/api/backup-database';
@@ -539,49 +581,77 @@ export const TabOrganizers: React.FC<TabOrganizersProps> = ({
       </div>
 
       {/* Database Protection & Backup/Restore Card */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-md border border-indigo-800/40">
-        <div className="flex items-start gap-3">
-          <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold flex-shrink-0 border border-indigo-500/30">
-            <Database className="w-5 h-5" />
-          </div>
-          <div className="text-xs space-y-1">
-            <div className="flex items-center gap-2">
-              <span className="font-black text-sm text-white">資料庫持久保存與雙向防護機制</span>
-              <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-full">
-                🛡️ 瀏覽器快照自動救援運行中
-              </span>
+      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-4 sm:p-5 flex flex-col gap-4 shadow-md border border-indigo-800/40">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="flex items-start gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-500/20 text-indigo-300 flex items-center justify-center font-bold flex-shrink-0 border border-indigo-500/30">
+              <Database className="w-5 h-5" />
             </div>
-            <p className="text-slate-300 leading-relaxed max-w-2xl">
-              已啟用客戶端自動快照機制！即使伺服器容器休眠重啟，系統亦會在您開啟網頁時智慧對齊復原建立的負責人與店家商品。您亦可隨時匯出整份資料庫備份檔案。
-            </p>
+            <div className="text-xs space-y-1">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-black text-sm text-white">資料庫持久保存與雙向防護機制</span>
+                
+                {/* Upstash Redis 狀態標籤 */}
+                {cloudStatus?.connected ? (
+                  <span className="bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full flex items-center gap-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    Upstash 雲端已連線 (Key: {cloudStatus.redisKey})
+                  </span>
+                ) : cloudStatus?.configured ? (
+                  <span className="bg-rose-500/20 text-rose-300 border border-rose-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full" title={cloudStatus.errorMessage || '請檢查 Render 上的 URL 與 Token'}>
+                    ⚠️ Upstash 連線失敗 (密鑰或網址異常)
+                  </span>
+                ) : (
+                  <span className="bg-amber-500/20 text-amber-300 border border-amber-500/40 text-[10px] font-bold px-2.5 py-0.5 rounded-full">
+                    🛡️ 瀏覽器快照救援模式 (未設定 Upstash)
+                  </span>
+                )}
+              </div>
+              <p className="text-slate-300 leading-relaxed max-w-2xl">
+                {cloudStatus?.connected
+                  ? `雲端資料庫運作中！雲端已儲存 ${cloudStatus.cloudStats?.vendorCount ?? 0} 家店家、${cloudStatus.cloudStats?.organizerCount ?? 0} 位負責人、${cloudStatus.cloudStats?.orderCount ?? 0} 筆訂單。即使主機休眠重啟，資料亦永不遺失。`
+                  : '已啟用客戶端自動快照機制！即使伺服器容器休眠重啟，系統亦會在您開啟網頁時智慧對齊復原建立的負責人與店家商品。您亦可隨時匯出整份資料庫備份檔案。'}
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="flex items-center gap-2 flex-shrink-0 w-full sm:w-auto justify-end">
-          <input
-            type="file"
-            ref={fileInputRef}
-            onChange={handleImportBackup}
-            accept=".json"
-            className="hidden"
-          />
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            disabled={isRestoring}
-            className="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95"
-            title="從先前下載的 JSON 備份檔還原"
-          >
-            <Upload className="w-3.5 h-3.5 text-indigo-400" />
-            {isRestoring ? '還原中...' : '匯入還原'}
-          </button>
-          <button
-            onClick={handleExportBackup}
-            className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm shadow-indigo-500/30"
-            title="下載整份資料庫 JSON 備份檔（包含店家、菜單、負責人與歷史資料）"
-          >
-            <Download className="w-3.5 h-3.5" />
-            匯出備份 (JSON)
-          </button>
+          <div className="flex flex-wrap items-center gap-2 flex-shrink-0 w-full sm:w-auto justify-end">
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleImportBackup}
+              accept=".json"
+              className="hidden"
+            />
+            {cloudStatus?.configured && (
+              <button
+                onClick={handleManualCloudSync}
+                disabled={isCloudSyncingNow}
+                className="px-3 py-2 rounded-xl bg-indigo-900/60 hover:bg-indigo-800/80 border border-indigo-500/40 text-indigo-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95"
+                title="立即將目前的店家菜單與負責人資料強制同步至 Upstash 雲端"
+              >
+                <RefreshCw className={`w-3.5 h-3.5 text-indigo-400 ${isCloudSyncingNow ? 'animate-spin' : ''}`} />
+                {isCloudSyncingNow ? '同步中...' : '同步至雲端'}
+              </button>
+            )}
+            <button
+              onClick={() => fileInputRef.current?.click()}
+              disabled={isRestoring}
+              className="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-bold text-xs flex items-center gap-1.5 transition active:scale-95"
+              title="從先前下載的 JSON 備份檔還原"
+            >
+              <Upload className="w-3.5 h-3.5 text-indigo-400" />
+              {isRestoring ? '還原中...' : '匯入還原'}
+            </button>
+            <button
+              onClick={handleExportBackup}
+              className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm shadow-indigo-500/30"
+              title="下載整份資料庫 JSON 備份檔（包含店家、菜單、負責人與歷史資料）"
+            >
+              <Download className="w-3.5 h-3.5" />
+              匯出備份 (JSON)
+            </button>
+          </div>
         </div>
       </div>
 

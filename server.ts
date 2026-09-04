@@ -3,6 +3,7 @@ import fs from "fs";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
+import { Redis } from "@upstash/redis";
 import { extractStoreMetadataAndItems, TAIWAN_CITIES } from "./src/utils/menuParser";
 
 interface SizeOption {
@@ -201,39 +202,83 @@ function getInitialSeedData(): DBData {
 
 let inMemoryDBCache: DBData | null = null;
 let isCloudSyncing = false;
+let isCloudLoadedSuccessfully = false;
+let redisClientInstance: Redis | null = null;
+
+// ☁️ 取得/快取 Upstash Redis 用戶端實例（安全修剪換行與空白字元）
+function getRedisClient(): Redis | null {
+  if (redisClientInstance) return redisClientInstance;
+  const rawUrl = process.env.UPSTASH_REDIS_REST_URL?.trim().replace(/^["']|["']$/g, "");
+  const rawToken = process.env.UPSTASH_REDIS_REST_TOKEN?.trim().replace(/^["']|["']$/g, "");
+
+  if (!rawUrl || !rawToken) {
+    return null;
+  }
+
+  try {
+    redisClientInstance = new Redis({
+      url: rawUrl,
+      token: rawToken,
+    });
+    return redisClientInstance;
+  } catch (err) {
+    console.error("❌ [Upstash Redis] 初始化連線失敗:", err);
+    return null;
+  }
+}
+
+// ☁️ 智慧無損合併：確保雲端現有的負責人、自訂店家與訂單 100% 保留，並補充系統預設便當店家
+function mergeDatabases(cloud: DBData, localSeed: DBData): DBData {
+  const merged: DBData = {
+    vendors: { ...(localSeed.vendors || {}), ...(cloud.vendors || {}) },
+    sessions: Array.isArray(cloud.sessions) ? [...cloud.sessions] : [],
+    organizers: Array.isArray(cloud.organizers) ? [...cloud.organizers] : [],
+    orders: Array.isArray(cloud.orders) ? [...cloud.orders] : [],
+    auditLogs: Array.isArray(cloud.auditLogs) ? [...cloud.auditLogs] : [],
+  };
+
+  // 確保雲端如果有自訂店家，店家內的菜單品項完整保留
+  if (cloud.vendors && typeof cloud.vendors === "object") {
+    Object.keys(cloud.vendors).forEach((vKey) => {
+      merged.vendors[vKey] = cloud.vendors[vKey];
+    });
+  }
+
+  // 補充本地種子中遺漏的預設負責人（若雲端為空）
+  if (merged.organizers.length === 0 && Array.isArray(localSeed.organizers)) {
+    merged.organizers = [...localSeed.organizers];
+  }
+
+  return merged;
+}
 
 // ☁️ Upstash Redis 雲端永久儲存引擎 (Upstash Redis Persistence Engine)
 async function syncFromCloudDB(): Promise<DBData | null> {
-  const upstashUrl = process.env.UPSTASH_REDIS_REST_URL;
-  const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
-  const redisKey = process.env.UPSTASH_REDIS_KEY || "smartgroup_db";
+  const client = getRedisClient();
+  const redisKey = (process.env.UPSTASH_REDIS_KEY || "smartgroup_db").trim();
 
-  if (!upstashUrl || !upstashToken) {
-    console.log("ℹ️ [Upstash Redis] 未偵測到 UPSTASH_REDIS_REST_URL / TOKEN，使用純本地/記憶體模式。");
+  if (!client) {
+    console.log("ℹ️ [Upstash Redis] 未偵測到有效的 UPSTASH_REDIS_REST_URL / TOKEN，使用純本地/記憶體模式。");
     return null;
   }
 
   try {
     console.log(`☁️ [Upstash Redis] 正在從雲端讀取 Key: "${redisKey}" ...`);
-    const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/get/${redisKey}`, {
-      headers: { Authorization: `Bearer ${upstashToken}` },
-    });
-    if (res.ok) {
-      const json = await res.json();
-      if (json.result) {
-        const cloudData = typeof json.result === "string" ? JSON.parse(json.result) : json.result;
-        if (cloudData && typeof cloudData === "object" && (cloudData.vendors || cloudData.sessions)) {
-          console.log(`✅ [Upstash Redis] 成功從雲端載入最新資料庫 (Key: "${redisKey}")！`);
-          return cloudData;
-        }
-      } else {
-        console.log(`ℹ️ [Upstash Redis] 雲端 Key "${redisKey}" 尚無資料，將於第一次操作時自動建立。`);
+    const raw = await client.get<any>(redisKey);
+    if (raw) {
+      const cloudData: DBData = typeof raw === "string" ? JSON.parse(raw) : raw;
+      if (cloudData && typeof cloudData === "object" && (cloudData.vendors || cloudData.sessions || cloudData.organizers)) {
+        console.log(
+          `✅ [Upstash Redis] 成功從雲端載入最新資料庫 (Key: "${redisKey}")！包含 ${Object.keys(cloudData.vendors || {}).length} 家店家，${cloudData.organizers?.length || 0} 位負責人，${cloudData.sessions?.length || 0} 筆開團記錄。`
+        );
+        isCloudLoadedSuccessfully = true;
+        return cloudData;
       }
     } else {
-      console.error(`⚠️ [Upstash Redis] 讀取失敗，HTTP 狀態碼: ${res.status}`);
+      console.log(`ℹ️ [Upstash Redis] 雲端 Key "${redisKey}" 尚無資料，將在第一次操作時安全初始化。`);
     }
   } catch (err) {
-    console.error("⚠️ [Upstash Redis] 雲端讀取發生異常，使用本地備份:", err);
+    console.error("⚠️ [Upstash Redis] 雲端讀取發生異常，使用本地資料作為防護備份:", err);
   }
 
   return null;
@@ -242,15 +287,25 @@ async function syncFromCloudDB(): Promise<DBData | null> {
 let pendingCloudSyncData: DBData | null = null;
 
 async function syncToCloudDB(data: DBData) {
-  const upstashUrl = process.env.UPSTASH_REDIS_REST_URL;
-  const upstashToken = process.env.UPSTASH_REDIS_REST_TOKEN;
-  const redisKey = process.env.UPSTASH_REDIS_KEY || "smartgroup_db";
+  const client = getRedisClient();
+  const redisKey = (process.env.UPSTASH_REDIS_KEY || "smartgroup_db").trim();
 
-  if (!upstashUrl || !upstashToken) {
-    return; // 未設定 Upstash 環境變數
+  if (!client) return;
+
+  // 🛡️ 雲端防空覆蓋保護：若雲端原本有資料，但記憶體因啟動問題為空，絕對禁止將空資料強制推至雲端
+  if (!isCloudLoadedSuccessfully && (!data.organizers || data.organizers.length === 0) && (!data.orders || data.orders.length === 0)) {
+    const existing = await client.get<any>(redisKey).catch(() => null);
+    if (existing) {
+      console.warn(`🛡️ [Upstash Redis 防護] 偵測到雲端已有現存資料庫，阻止空的本地種子強制覆蓋雲端！Key: "${redisKey}"`);
+      const existingData = typeof existing === "string" ? JSON.parse(existing) : existing;
+      if (existingData && (existingData.organizers?.length > 0 || existingData.sessions?.length > 0)) {
+        inMemoryDBCache = mergeDatabases(existingData, data);
+        isCloudLoadedSuccessfully = true;
+        return;
+      }
+    }
   }
 
-  // Queue the latest database snapshot
   pendingCloudSyncData = data;
 
   if (isCloudSyncing) return;
@@ -261,22 +316,9 @@ async function syncToCloudDB(data: DBData) {
       const dataToSync = pendingCloudSyncData;
       pendingCloudSyncData = null;
 
-      const jsonStr = JSON.stringify(dataToSync);
-      const res = await fetch(`${upstashUrl.replace(/\/$/, "")}/set/${redisKey}`, {
-        method: "POST",
-        headers: {
-          Authorization: `Bearer ${upstashToken}`,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify([jsonStr]),
-      });
-
-      if (res.ok) {
-        console.log(`⚡ [Upstash Redis] 資料已即時同步儲存至雲端 (Key: "${redisKey}")`);
-      } else {
-        const errText = await res.text().catch(() => "");
-        console.error(`⚠️ [Upstash Redis] 寫入雲端失敗 HTTP ${res.status}: ${errText}`);
-      }
+      await client.set(redisKey, JSON.stringify(dataToSync));
+      console.log(`⚡ [Upstash Redis] 資料已成功即時同步至雲端 (Key: "${redisKey}")`);
+      isCloudLoadedSuccessfully = true;
     }
   } catch (err) {
     console.error("⚠️ [Upstash Redis] 同步推送到雲端時發生錯誤:", err);
@@ -356,13 +398,14 @@ async function startServer() {
   const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
   // 啟動伺服器前先嘗試從雲端復原最新資料
+  const seed = getInitialSeedData();
   const cloudData = await syncFromCloudDB();
   if (cloudData) {
-    inMemoryDBCache = cloudData;
+    inMemoryDBCache = mergeDatabases(cloudData, seed);
     try {
       if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-      fs.writeFileSync(DB_FILE, JSON.stringify(cloudData, null, 2), "utf-8");
-      console.log("💾 [Cloud DB] 已成功將雲端資料庫同步至本地副本 (db.json)");
+      fs.writeFileSync(DB_FILE, JSON.stringify(inMemoryDBCache, null, 2), "utf-8");
+      console.log("💾 [Cloud DB] 已成功將雲端最新資料庫同步至本地副本 (db.json)");
     } catch (e) {
       console.error("Failed to write local backup copy", e);
     }
@@ -374,7 +417,10 @@ async function startServer() {
   if (inMemoryDBCache) {
     const isFixed = sanitizeVendorCategories(inMemoryDBCache);
     if (isFixed) {
-      saveDB(inMemoryDBCache);
+      // 僅儲存本地，不觸發覆蓋
+      try {
+        fs.writeFileSync(DB_FILE, JSON.stringify(inMemoryDBCache, null, 2), "utf-8");
+      } catch {}
     }
   }
 
@@ -388,6 +434,64 @@ async function startServer() {
   };
 
   // --- API Routes ---
+
+  // 0. Cloud Persistence Health Status (雲端資料庫狀態與健康診斷)
+  app.get("/api/cloud-status", async (req, res) => {
+    const rawUrl = process.env.UPSTASH_REDIS_REST_URL?.trim();
+    const rawToken = process.env.UPSTASH_REDIS_REST_TOKEN?.trim();
+    const redisKey = (process.env.UPSTASH_REDIS_KEY || "smartgroup_db").trim();
+    const isConfigured = Boolean(rawUrl && rawToken);
+
+    let testConnectionOk = false;
+    let cloudStats: any = null;
+    let errorMessage: string | null = null;
+
+    if (isConfigured) {
+      try {
+        const client = getRedisClient();
+        if (client) {
+          const raw = await client.get<any>(redisKey);
+          testConnectionOk = true;
+          if (raw) {
+            const parsed = typeof raw === "string" ? JSON.parse(raw) : raw;
+            cloudStats = {
+              vendorCount: Object.keys(parsed.vendors || {}).length,
+              organizerCount: parsed.organizers?.length || 0,
+              sessionCount: parsed.sessions?.length || 0,
+              orderCount: parsed.orders?.length || 0,
+            };
+          }
+        }
+      } catch (err: any) {
+        testConnectionOk = false;
+        errorMessage = err?.message || String(err);
+      }
+    }
+
+    const currentDb = loadDB();
+
+    res.json({
+      configured: isConfigured,
+      connected: testConnectionOk,
+      redisKey,
+      isCloudLoadedSuccessfully,
+      cloudStats,
+      localStats: {
+        vendorCount: Object.keys(currentDb.vendors || {}).length,
+        organizerCount: currentDb.organizers?.length || 0,
+        sessionCount: currentDb.sessions?.length || 0,
+        orderCount: currentDb.orders?.length || 0,
+      },
+      errorMessage,
+    });
+  });
+
+  // 手動觸發雲端強制同步
+  app.post("/api/cloud-sync-now", async (req, res) => {
+    const currentDb = loadDB();
+    await syncToCloudDB(currentDb);
+    res.json({ success: true, message: "已強制推送最新資料庫至 Upstash 雲端！" });
+  });
 
   // 1. Initial Data
   app.get("/api/initial-data", (req, res) => {
