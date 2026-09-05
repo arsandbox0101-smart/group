@@ -37,7 +37,7 @@
 
 ### 1. 複製專案與安裝依賴
 ```bash
-git clone https://github.com/poyuan0506-GH/SmartGroup.git
+git clone ***.git
 cd SmartGroup
 npm install
 ```
