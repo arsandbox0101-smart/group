@@ -303,6 +303,12 @@ export const TabAdmin: React.FC<TabAdminProps> = ({
     if (!activeSession) return;
     setNotifyOrganizerOption(true);
     setNotifyBuyersOption(true);
+    setTerminateError(null);
+    if (currentOrganizer && currentOrganizer.name === activeSession.organizerName && currentOrganizer.password) {
+      setTerminatePasswordInput(currentOrganizer.password);
+    } else {
+      setTerminatePasswordInput('');
+    }
     setShowTerminateModal(true);
   };
 
@@ -773,7 +779,11 @@ export const TabAdmin: React.FC<TabAdminProps> = ({
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setSessionToDelete(s);
-                                setDeletePasswordInput('');
+                                if (currentOrganizer && currentOrganizer.name === s.organizerName && currentOrganizer.password) {
+                                  setDeletePasswordInput(currentOrganizer.password);
+                                } else {
+                                  setDeletePasswordInput('');
+                                }
                                 setDeleteError(null);
                               }}
                               className="px-2 py-0.5 rounded-lg bg-red-100 hover:bg-red-200 text-red-700 text-[11px] font-bold flex items-center gap-1 transition-colors"
@@ -1258,7 +1268,7 @@ export const TabAdmin: React.FC<TabAdminProps> = ({
                   }
                   setSessionToDelete(null);
                   if (onDeleteSession) {
-                    await onDeleteSession(targetId);
+                    await onDeleteSession(targetId, deletePasswordInput);
                   }
                 }}
                 disabled={isProcessing}
