@@ -37,7 +37,7 @@
 
 ### 1. 複製專案與安裝依賴
 ```bash
-git clone https://github.com/poyuan0506-GH/SmartGroup.git
+git clone https://github.com/**.git
 cd SmartGroup
 npm install
 ```
@@ -48,9 +48,9 @@ npm install
 PORT=3000
 
 # Upstash Redis 雲端資料庫（確保包含 https://，不可帶雙引號）
-UPSTASH_REDIS_REST_URL=https://unique-werewolf-112481.upstash.io
-UPSTASH_REDIS_REST_TOKEN=gQAAAAAAAbdhAAIgcDI3NzUzYWU3YjFjNWY0YjBlOGZiMmIyYmFiNTY0OTQ4OQ
-UPSTASH_REDIS_KEY=smartgroup_db
+UPSTASH_REDIS_REST_URL=https://*.io
+UPSTASH_REDIS_REST_TOKEN=
+UPSTASH_REDIS_KEY=group*_db
 
 # Gemini AI 圖片辨識金鑰（選填）
 GEMINI_API_KEY=your_gemini_api_key_here
@@ -71,7 +71,7 @@ npm run dev
 ### 步驟 1：在 Render 建立 Web Service
 1. 登入 [Render Dashboard](https://dashboard.render.com/)。
 2. 點擊 **New +** ➜ **Web Service**。
-3. 連結您的 GitHub 儲存庫（例如 `poyuan0506-GH/SmartGroup` 或 `arsandbox0101-smart/group`）。
+3. 連結您的 GitHub 儲存庫（例如 `SmartGroup` 或 `group`）。
 4. 設定基本參數：
    - **Environment**: `Node`
    - **Build Command**: `npm install && npm run build`
@@ -82,7 +82,7 @@ npm run dev
 
 | 環境變數名稱 | 範例值 | 說明 |
 | :--- | :--- | :--- |
-| `UPSTASH_REDIS_REST_URL` | `https://unique-werewolf-112481.upstash.io` | Upstash Redis REST 網址（務必包含 `https://`） |
+| `UPSTASH_REDIS_REST_URL` | `https:/**.io` | Upstash Redis REST 網址（務必包含 `https://`） |
 | `UPSTASH_REDIS_REST_TOKEN` | `gQAAAAAAAbdhAAIgc...` | Upstash Redis REST Token |
 | `UPSTASH_REDIS_KEY` | `smartgroup_db_g1` | **多組別關鍵！** 第 1 組填 `smartgroup_db_g1`、第 2 組填 `smartgroup_db_g2`，依此類推，資料各自獨立不互串！ |
 | `GEMINI_API_KEY` | `AIzaSy...` | Google Gemini API Key（選填，用於 AI 圖片辨識菜單） |
@@ -92,8 +92,8 @@ npm run dev
 ## 🔄 雙 GitHub 儲存庫同步設定指南
 
 本專案支援同時同步推送到以下兩個 GitHub 倉庫：
-1. **倉庫 A**: `https://github.com/poyuan0506-GH/SmartGroup`
-2. **倉庫 B**: `https://github.com/arsandbox0101-smart/group`
+1. **倉庫 A**: `https://github.com/***/SmartGroup`
+2. **倉庫 B**: `https://github.com/***/group`
 
 ### 方法一：使用專案內建的一鍵雙推送腳本 (推薦)
 在本地終端機執行：
@@ -110,7 +110,7 @@ bash scripts/push-both.sh
 ## 🛠️ 常見問題與排查 (FAQ)
 
 ### Q1：畫面右上角出現「⚠️ Upstash 連線失敗 (密鑰或網址異常)」？
-1. **檢查網址是否缺少 `https://`**：正確格式必須為 `https://unique-werewolf-112481.upstash.io`。
+1. **檢查網址是否缺少 `https://`**：正確格式必須為 `https://***.io`。
 2. **檢查是否不小心貼入引號**：請移除變數值前後的雙引號 `"`。
 3. **檢查 DNS 是否過期**：若更換過 Upstash 資料庫，請至 Upstash 控制台確認最新網址。
 
@@ -127,4 +127,4 @@ bash scripts/push-both.sh
 ---
 
 ## 📄 開源授權
-本專案採用 [MIT License](LICENSE) 開源授權，歡迎自由修改與分享。
+本專案採用 [MIT License](LICENSE) 開源不授權，僅個人使用。
