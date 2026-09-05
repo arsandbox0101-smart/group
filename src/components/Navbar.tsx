@@ -10,6 +10,7 @@ interface NavbarProps {
   activeTab: string;
   setActiveTab: (tab: string) => void;
   hasActiveSession: boolean;
+  isSessionExpired?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -20,6 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   activeTab,
   setActiveTab,
   hasActiveSession,
+  isSessionExpired = false,
 }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isPwaModalOpen, setIsPwaModalOpen] = useState(false);
@@ -112,10 +114,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               </button>
 
               {hasActiveSession && (
-                <span className="hidden lg:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-1.5"></span>
-                  團購開放中
-                </span>
+                isSessionExpired ? (
+                  <span className="hidden lg:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-rose-50 text-rose-700 border border-rose-200 shrink-0">
+                    <span className="w-2 h-2 rounded-full bg-rose-500 mr-1.5"></span>
+                    已截止收單
+                  </span>
+                ) : (
+                  <span className="hidden lg:inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 shrink-0">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse mr-1.5"></span>
+                    團購開放中
+                  </span>
+                )
               )}
 
               {/* Compact & Responsive User Profile Badge */}

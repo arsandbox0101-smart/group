@@ -205,11 +205,22 @@ let isCloudSyncing = false;
 let isCloudLoadedSuccessfully = false;
 let redisClientInstance: Redis | null = null;
 
-// ☁️ 取得/快取 Upstash Redis 用戶端實例（安全修剪換行與空白字元）
+// ☁️ 取得/快取 Upstash Redis 用戶端實例（安全修剪換行、雙引號與空白字元，並容錯 fallback）
 function getRedisClient(): Redis | null {
   if (redisClientInstance) return redisClientInstance;
-  const rawUrl = process.env.UPSTASH_REDIS_REST_URL?.trim().replace(/^["']|["']$/g, "");
-  const rawToken = process.env.UPSTASH_REDIS_REST_TOKEN?.trim().replace(/^["']|["']$/g, "");
+  let rawUrl = process.env.UPSTASH_REDIS_REST_URL?.trim().replace(/^["']|["']$/g, "");
+  let rawToken = process.env.UPSTASH_REDIS_REST_TOKEN?.trim().replace(/^["']|["']$/g, "");
+
+  // 🛡️ 容錯修剪：若包含已知舊失效網址 genuine-mite-71257，或為空，自動升級為正確的 Upstash 實例
+  if (!rawUrl || rawUrl.includes("genuine-mite-71257")) {
+    rawUrl = "https://unique-werewolf-112481.upstash.io";
+    rawToken = "gQAAAAAAAbdhAAIgcDI3NzUzYWU3YjFjNWY0YjBlOGZiMmIyYmFiNTY0OTQ4OQ";
+  }
+
+  // 確保包含 https:// 前綴
+  if (rawUrl && !rawUrl.startsWith("http://") && !rawUrl.startsWith("https://")) {
+    rawUrl = `https://${rawUrl}`;
+  }
 
   if (!rawUrl || !rawToken) {
     return null;
@@ -222,7 +233,7 @@ function getRedisClient(): Redis | null {
     });
     return redisClientInstance;
   } catch (err) {
-    console.error("❌ [Upstash Redis] 初始化連線失敗:", err);
+    console.error("❌ [Upstash Redis] 初始化連線失敗 (平滑降級為本地快照模式):", err);
     return null;
   }
 }
@@ -996,6 +1007,35 @@ async function startServer() {
     // 🛑 Security Check: Prevent ordering on Closed or Non-existent session
     if (!session || session.status !== "Open") {
       return res.status(400).json({ error: "【資安保全關卡】該團購活動已關閉結單，無法再提交新點餐！" });
+    }
+
+    // ⏰ Deadline Expiration Check: 嚴格時間把關，逾期自動禁止下單
+    if (session.deadline) {
+      let isExpired = false;
+      const deadlineStr = session.deadline.trim();
+      const dateStr = session.date ? session.date.trim() : "";
+
+      let targetDate: Date | null = null;
+      if (deadlineStr.includes("-") || deadlineStr.includes("/")) {
+        targetDate = new Date(deadlineStr.replace(/-/g, "/"));
+      } else if (dateStr) {
+        const cleanDate = dateStr.split(" ")[0].replace(/-/g, "/");
+        targetDate = new Date(`${cleanDate} ${deadlineStr}`);
+      }
+
+      if (targetDate && !isNaN(targetDate.getTime())) {
+        if (Date.now() >= targetDate.getTime()) {
+          isExpired = true;
+        }
+      }
+
+      if (isExpired) {
+        session.status = "Closed";
+        saveDB(db);
+        return res.status(400).json({
+          error: `【逾期停止收單】本次團購已於 ${session.deadline} 截止，系統已停止收單！`,
+        });
+      }
     }
 
     const timestamp = new Date().toLocaleString("zh-TW", { timeZone: "Asia/Taipei" });

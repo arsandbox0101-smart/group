@@ -776,6 +776,29 @@ export default function App() {
     }
   };
 
+  // ⏰ 檢查當前活動是否已截止
+  const isSessionExpired = React.useMemo(() => {
+    if (!activeSession) return false;
+    if (activeSession.status === 'Closed') return true;
+    if (!activeSession.deadline) return false;
+
+    const deadlineStr = activeSession.deadline.trim();
+    const dateStr = activeSession.date ? activeSession.date.trim() : '';
+
+    let targetDate: Date | null = null;
+    if (deadlineStr.includes('-') || deadlineStr.includes('/')) {
+      targetDate = new Date(deadlineStr.replace(/-/g, '/'));
+    } else if (dateStr) {
+      const cleanDate = dateStr.split(' ')[0].replace(/-/g, '/');
+      targetDate = new Date(`${cleanDate} ${deadlineStr}`);
+    }
+
+    if (targetDate && !isNaN(targetDate.getTime())) {
+      return Date.now() >= targetDate.getTime();
+    }
+    return false;
+  }, [activeSession]);
+
   return (
     <div className="min-h-screen bg-slate-100/70 text-slate-800 flex flex-col font-sans antialiased selection:bg-blue-500 selection:text-white">
       {/* Top Navigation Bar */}
@@ -787,6 +810,7 @@ export default function App() {
         activeTab={activeTab}
         setActiveTab={(t) => setActiveTab(t as any)}
         hasActiveSession={!!activeSession}
+        isSessionExpired={isSessionExpired}
       />
 
       {/* Main Content Area */}

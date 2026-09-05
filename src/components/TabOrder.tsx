@@ -80,6 +80,28 @@ export const TabOrder: React.FC<TabOrderProps> = ({
 
   const isClosed = session?.status === 'Closed';
 
+  // ⏰ 檢查是否已超過團購截止時間
+  const isExpired = React.useMemo(() => {
+    if (!session?.deadline) return false;
+    const deadlineStr = session.deadline.trim();
+    const dateStr = session.date ? session.date.trim() : '';
+
+    let targetDate: Date | null = null;
+    if (deadlineStr.includes('-') || deadlineStr.includes('/')) {
+      targetDate = new Date(deadlineStr.replace(/-/g, '/'));
+    } else if (dateStr) {
+      const cleanDate = dateStr.split(' ')[0].replace(/-/g, '/');
+      targetDate = new Date(`${cleanDate} ${deadlineStr}`);
+    }
+
+    if (targetDate && !isNaN(targetDate.getTime())) {
+      return Date.now() >= targetDate.getTime();
+    }
+    return false;
+  }, [session?.deadline, session?.date]);
+
+  const isOrderingDisabled = isClosed || isExpired;
+
   if (!session) {
     return (
       <div className="max-w-4xl mx-auto py-12 px-4">
@@ -1065,15 +1087,31 @@ export const TabOrder: React.FC<TabOrderProps> = ({
                 <span className="text-2xl font-black text-red-600">${totalCartPrice}</span>
               </div>
 
+              {/* Expiration or Closed Warning Banner above button */}
+              {isExpired && !isClosed && (
+                <div className="bg-rose-50 border border-rose-200 rounded-xl p-3 text-xs text-rose-800 flex items-center gap-2 font-bold animate-pulse">
+                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
+                  <span>⚠️ 本活動已於 {session.deadline} 截止，已停止收單！</span>
+                </div>
+              )}
+              {isClosed && (
+                <div className="bg-slate-100 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 flex items-center gap-2 font-bold">
+                  <AlertCircle className="w-4 h-4 text-slate-500 shrink-0" />
+                  <span>🛑 承辦人已結單關閉本活動，無法再新增餐點。</span>
+                </div>
+              )}
+
               <button
                 onClick={onSubmitOrder}
-                disabled={cart.length === 0 || isSubmitting || isClosed}
+                disabled={cart.length === 0 || isSubmitting || isOrderingDisabled}
                 className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 disabled:opacity-50 disabled:cursor-not-allowed text-white font-extrabold text-base flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/20 transition-all hover:scale-[1.01]"
               >
                 {isSubmitting ? (
                   <span>訂單送出中...</span>
                 ) : isClosed ? (
-                  <span>🛑 本團購已終止結單 (無法送出)</span>
+                  <span>🛑 承辦人已終止結單 (停止收單)</span>
+                ) : isExpired ? (
+                  <span>🚫 已過截止時間 ({session.deadline}) 停止收單</span>
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
